@@ -1,0 +1,201 @@
+html, body {
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
+    width: 100%;
+}
+
+header {
+    background-color: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
+    color: #ECF0F1;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-start;  /* Adjusts horizontal spacing */
+    margin-top: 5px;
+}
+
+header h1 {
+  margin-left: 80px;  /* Adjust the value as needed to move the title right */
+}
+
+body, h1, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Ensures padding does not affect the width */
+}
+
+h1 {
+    margin-left: 20px;
+}
+
+/* Menu Icon Styling */
+.menu-icon {
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 3000;
+    color: white;
+    font-size: 30px;
+  }
+  
+  /* Navigation Menu Styling */
+  #nav-menu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: -250px;
+    background: linear-gradient(to right, #663399, #9575cd); /* Purple to lighter purple */
+    transition: 0.5s;
+    
+  }
+  
+  #main-content {
+    transition: margin-left 0.5s ease;
+  }
+  
+  .nav-open {
+    left: 0; /* Position the menu on the screen */
+  }
+  
+  .main-push {
+    margin-left: 250px; /* Push the main content to the right */
+  }
+  
+  #nav-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    display: block;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  }
+  
+  #nav-menu a:hover {
+    background-color: #f1f1f1; /* Light background on hover */
+    color: #333; /* Darker text color on hover */
+  }
+  
+  /* Close button */
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+/*------------------- Start of the main content ------------------------*/
+.main-content {
+    text-align: center;
+}
+
+#introQuote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    font-family: 'Lobster', cursive; /* Apply your chosen cool font */
+    font-size: 3em; /* Make it big to cover the screen */
+    font-weight: normal;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000; /* Stronger shadow for emphasis */
+    text-align: center;
+    opacity: 1;
+    transition: opacity 2s ease; /* Add a smooth fade transition */
+    z-index: 10; /* Ensure the quote is above other content */
+}
+
+#content {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 2s ease; /* Smooth fade-in transition */
+}
+
+/*----------------- The Sections -----------------*/
+/* Scrollable content */
+#scrollable-content {
+    max-height: 80vh; /* Adjust this value for your design */
+    overflow-y: scroll; /* Enables vertical scrolling */
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* Optional: Adds a slight transparency */
+    border-radius: 10px;
+}
+
+/* Keep section styles similar to before */
+section {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-family: 'Lobster', cursive;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffd700; /* Gold color for section titles */
+}
+
+section p, section ul {
+    margin-left: 15px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+section ul li {
+    margin-bottom: 8px;
+    padding-left: 1em;
+    position: relative;
+}
+
+section ul li::before {
+    content: "•"; /* Bullet point */
+    position: absolute;
+    left: 0;
+    color: #ffd700; /* Gold color for bullets */
+}
+
+/* Section Content: Flex Container */
+.section-content {
+    display: flex; /* Enables horizontal alignment */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Add space between text and video */
+}
+
+/* Text Content on Left */
+.section-text {
+    flex: 1;
+    font-size: 1.2em;
+}
+
+/* Video Content on Right */
+.section-video {
+    flex-shrink: 0; /* Prevent the video from shrinking */
+    margin-right: 100px;
+}
+
+video {
+    border-radius: 20px;
+}
+
+
+
+

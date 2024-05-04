@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfulness Zone - MindScape</title>
+    <link rel="stylesheet" href="css/mindfulness.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+</head>
+<body>
+    <!-- Slide-out Navigation Menu -->
+    <div id="nav-menu" class="nav-closed">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+        <a href="mainPage.html">Home</a>
+        <a href="mentalHealth.html">Mental Health Hub</a>
+        <a href="selfBeliefs.html">Self-limiting Beliefs Workshop</a>
+        <a href="mindfulness.html">Mindfulness Zone</a>
+        <a href="learningCenter.html">Learning Center</a>
+        <a href="journalEntries.html">My entries</a>
+        <a href="myData.html">My data</a>
+    </div>
+
+    <div id="main-content">
+        <header>
+            <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
+            <h1>MindScape - Mindfulness Zone</h1>
+            
+        </header>
+    
+        <main id="scrollable-content">
+            <p id="introQuote"></p> <!-- Quote appears here -->
+            <div id="content">
+                <!-- Gratitude Section -->
+                <section id="gratitude">
+                    <h2>Gratitude</h2>
+                    <div class="section-content">
+                        <!-- Text Content -->
+                        <div class="section-text">
+                            <p>Explore practices that help you recognize and appreciate the positive aspects of your life.</p>
+                            <ul>
+                                <li>Start a gratitude journal</li>
+                                <li>Daily reflection exercises</li>
+                                <li>Guided meditation on gratitude</li>
+                            </ul>
+                        </div>
+                        <!-- Embedded Local Video -->
+                        <div class="section-video">
+                            <video width="400" height="225" controls>
+                                <source src="videos/priming.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Self-Worth Section -->
+                <section id="self-worth">
+                    <h2>Self-Worth</h2>
+                    <div class="section-content">
+                        <!-- Text Content -->
+                        <div class="section-text">
+                            <p>Learn to value and celebrate your unique qualities to build lasting confidence.</p>
+                            <ul>
+                                <li>Affirmation exercises</li>
+                                <li>Understanding your strengths</li>
+                                <li>Self-acceptance meditation</li>
+                            </ul>
+                        </div>
+                        <!-- Embedded Local Video -->
+                        <div class="section-video">
+                            <video width="400" height="225" controls>
+                                <source src="videos/selfWorth.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hype Section -->
+                <section id="hype">
+                    <h2>Hype</h2>
+                    <div class="section-content">
+                        <!-- Text Content -->
+                        <div class="section-text">
+                            <p>Learn to value and celebrate your unique qualities to build lasting confidence.</p>
+                            <ul>
+                                <li>Affirmation exercises</li>
+                                <li>Understanding your strengths</li>
+                                <li>Self-acceptance meditation</li>
+                            </ul>
+                        </div>
+                        <!-- Embedded Local Video -->
+                        <div class="section-video">
+                            <video width="400" height="225" controls>
+                                <source src="videos/awesomeVibe.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Anxiety Section -->
+                <section id="anxiety">
+                    <h2>Anxiety</h2>
+                    <div class="section-content">
+                        <!-- Text Content -->
+                        <div class="section-text">
+                            <p>Learn to value and celebrate your unique qualities to build lasting confidence.</p>
+                            <ul>
+                                <li>Affirmation exercises</li>
+                                <li>Understanding your strengths</li>
+                                <li>Self-acceptance meditation</li>
+                            </ul>
+                        </div>
+                        <!-- Embedded Local Video -->
+                        <div class="section-video">
+                            <video width="400" height="225" controls>
+                                <source src="videos/anxiety.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <script src="js/mindfulness.js"></script>
+</body>
+</html>

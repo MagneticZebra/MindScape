@@ -1,0 +1,145 @@
+html, body {
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
+    width: 100%;
+}
+
+header {
+    background-color: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
+    color: #ECF0F1;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-start;  /* Adjusts horizontal spacing */
+    margin-top: 5px;
+}
+
+header h1 {
+  margin-left: 80px;  /* Adjust the value as needed to move the title right */
+}
+
+body, h1, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Ensures padding does not affect the width */
+}
+
+h1 {
+    margin-left: 20px;
+}
+
+/* Menu Icon Styling */
+.menu-icon {
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 3000;
+    color: white;
+    font-size: 30px;
+  }
+  
+  /* Navigation Menu Styling */
+  #nav-menu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: -250px;
+    background: linear-gradient(to right, #663399, #9575cd); /* Purple to lighter purple */
+    transition: 0.5s;
+    
+  }
+  
+  #main-content {
+    transition: margin-left 0.5s ease;
+  }
+  
+  .nav-open {
+    left: 0; /* Position the menu on the screen */
+  }
+  
+  .main-push {
+    margin-left: 250px; /* Push the main content to the right */
+  }
+  
+  #nav-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    display: block;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  }
+  
+  #nav-menu a:hover {
+    background-color: #f1f1f1; /* Light background on hover */
+    color: #333; /* Darker text color on hover */
+  }
+  
+  /* Close button */
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+/*------------------- Start of the main content ------------------------*/
+.main-content {
+    text-align: center;
+}
+
+#monthName {
+    text-align: center;
+}
+
+.emojis {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.emoji-section {
+    margin: 20px;
+    text-align: center;
+}
+
+.emoji-icon {
+    font-size: 48px;
+    display: block; /* Ensures emojis are on top of the graphs */
+}
+
+.emoji-graph {
+    width: 500px !important; /* Set width */
+    height: auto !important; /* Set height */
+    display: block; /* Correct any layout issues */
+    background-color: #f0f0f0; /* Placeholder for graphs */
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+#insights {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#insightContent {
+    font-size: 18px;
+}
+
+/*----------------- Media Queries ------------------*/
+@media (max-width: 768px) {
+    .emoji-section {
+        margin: 10px 5px; /* Reduce margin on smaller screens */
+    }
+}
+

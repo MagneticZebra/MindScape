@@ -1,0 +1,348 @@
+html, body {
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
+    width: 100%;
+}
+
+header {
+    background-color: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
+    color: #ECF0F1;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-start;  /* Adjusts horizontal spacing */
+    margin-top: 5px;
+}
+
+header h1 {
+  margin-left: 80px;  /* Adjust the value as needed to move the title right */
+}
+
+body, h1, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Ensures padding does not affect the width */
+}
+
+h1 {
+    margin-left: 20px;
+}
+
+.material-symbols-outlined {
+    margin-left: 7px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.mental-health-hub {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .mood-tracker {
+    text-align: center;
+    justify-content: center;
+    align-items: center; /* Center items horizontally */
+    padding: 20px;
+    width: 50%;
+    flex-direction: row;
+    color: white;
+  }
+  
+  .emoji {
+    font-size: 3rem; /* Adjust size as necessary */
+    margin: 0 10px;
+    cursor: pointer; /* Indicates that emojis are clickable */
+    display: inline-block;
+  }
+
+  .emoji:hover {
+    scale: 1.1;
+  }
+
+  /* Ensure the emoji response message and input box are centered */
+#emoji-response {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #FFF; /* White text color for contrast */
+  font-size: 1.2rem;
+}
+
+#response-container {
+  display: inline-block; /* This will allow the input and button to sit side-by-side */
+  margin-top: 10px;
+}
+
+/* Style the input text box */
+#response-input {
+  padding: 10px;
+  width: 500px; /* You might want to adjust this and the following styles to fit your layout */
+  height: 100px; /* Set an initial height */
+  border: 2px solid #5D55FA;
+  border-radius: 15px;
+  font-size: 1rem;
+  margin-top: 10px;
+  resize: vertical; /* Allows the user to resize the textarea vertically */
+  box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+  min-height: 100px;
+  max-height: 300px;
+}
+
+/* When the input box is displayed, use a smooth transition */
+#response-input {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Adjust this to trigger when the input box is shown */
+#response-input.displayed {
+  display: block;
+  opacity: 1;
+}
+
+#response-submit {
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: #6A5ACD; /* Purple color to match your scheme */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+#response-submit:hover {
+  background-color: #7B68EE; /* A lighter purple for hover state */
+}
+
+/* This ensures that the textbox and the button are vertically aligned */
+#response-input, #response-submit {
+  vertical-align: middle;
+}
+
+.reflection {
+  width: 50%; /* Takes up the remaining half of the horizontal space */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center; /* Center the content */
+}  
+
+.wins, .lessons {
+  flex: 1;
+  margin: 10px 0;
+  width: 100%;
+}
+
+#wins-tableau, #lessons-tableau {
+  background: #f3f3f3; /* Light gray background */
+  border: 1px solid #ccc;
+  max-height: 250px; /* Minimum height */
+  width: 75%; /* Full width */
+  padding: 10px;
+  overflow-y: auto; /* Scrollable */
+  border-radius: 20px;
+}
+
+.tableau-list {
+  list-style-type: none; /* Removes the default numbering */
+  padding: 0; /* Resets padding */
+  width: 100%;
+  overflow-y: auto; /* Scrollable */
+}
+
+.tableau-list li {
+  background: #ffffff; /* white background for list items */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* rounded corners */
+    margin-top: 10px;
+    padding: 10px 15px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
+    transition: box-shadow 0.2s;
+}
+
+.tableau-list li:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* more pronounced shadow on hover */
+}
+
+.delete-btn {
+  color: #777;
+  font-size: 1rem; /* larger font size for readability */
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  transition: color 0.2s;
+}
+
+.delete-btn:hover {
+  color: #ff0000; /* change color on hover for emphasis */
+}
+
+/* Style the text inside the list for better readability */
+.tableau-list li span {
+  word-break: break-word; /* ensures the text wraps correctly */
+}
+
+#journal-trigger-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50; /* Example: a pleasant green */
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  z-index: 999;
+  cursor: pointer;
+}
+
+#journal-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff; /* White background for clarity */
+  padding: 20px;
+  box-shadow: 0 -5px 10px rgba(0,0,0,0.15); /* Subtle shadow for depth */
+  border-top-left-radius: 10px; /* Rounded top corners */
+  border-top-right-radius: 10px;
+  transform: translateY(100%); /* Initially hidden below the view */
+  transition: transform 0.5s ease-in-out;
+  z-index: 1000;
+  overflow: hidden; /* Ensures no internal content can overflow */
+}
+
+#journal-textarea {
+  width: 100%;
+  height: 550px; /* Sufficient space for writing */
+  background-color: #f8f8f8; /* Slightly off-white for less strain on eyes */
+  border: 2px solid #ccc; /* Subtle border */
+  padding: 10px;
+  border-radius: 8px; /* Rounded corners */
+  box-sizing: border-box; /* Includes padding and border in the width */
+  font-size: 16px; /* Readable text size */
+  color: #333; /* Darker text for contrast */
+  resize: none;
+}
+
+#journal-panel.journal-open {
+  transform: translateY(0%); /* Slide in */
+}
+
+#journal-panel.journal-closed {
+  transform: translateY(100%); /* Slide out */
+}
+
+.journal-questions-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap onto the next line */
+  width: 100%; /* Full width to spread across the panel */
+}
+
+.journal-question {
+  flex: 1 1 50%;  /* Each question takes up half the width of the container */
+  width: 100%; /* Full width to spread across the panel */
+  margin-top: 10px;
+  font-size: 1rem; /* Larger font size for readability */
+  color: #333; /* Darker font color for contrast */
+}
+
+button {
+  padding: 10px 20px;
+  margin-right: 10px; /* Space between buttons */
+  background-color: #4CAF50; /* Harmonious with your color scheme */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #367C39; /* Darker shade on hover */
+}
+
+button#close-journal-panel {
+  background-color: #f44336; /* Red button for closing */
+}
+
+button#close-journal-panel:hover {
+  background-color: #c53727; /* Darker red on hover */
+}
+
+/* Menu Icon Styling */
+.menu-icon {
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 3000;
+  color: white;
+  font-size: 30px;
+}
+
+/* Navigation Menu Styling */
+#nav-menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: -250px;
+  background: linear-gradient(to right, #663399, #9575cd); /* Purple to lighter purple */
+  transition: 0.5s;
+  
+}
+
+#main-content {
+  transition: margin-left 0.5s ease;
+}
+
+.nav-open {
+  left: 0; /* Position the menu on the screen */
+}
+
+.main-push {
+  margin-left: 250px; /* Push the main content to the right */
+}
+
+#nav-menu a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+  display: block;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+#nav-menu a:hover {
+  background-color: #f1f1f1; /* Light background on hover */
+  color: #333; /* Darker text color on hover */
+}
+
+/* Close button */
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+

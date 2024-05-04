@@ -1,0 +1,87 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Patrick Hand', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents scrollbars from appearing during the animation */
+    width: 100%;
+    z-index: 0;
+}
+
+body {
+    transition: opacity 1s ease-out;
+    opacity: 1;
+}
+
+.container {
+    text-align: center;
+    font-size: 48px;
+    color: white;
+    user-select: none;
+    display: flex; /* Ensures the container is also flex */
+    justify-content: center; /* Centers horizontally in the flex container */
+    align-items: center; /* Centers vertically in the flex container */
+    width: 100%; /* Takes full width to center content properly */
+    height: 100%; /* Takes full height to center content properly */
+    flex-direction: column; /* Stack children vertically */
+    background: transparent;
+    z-index: 2;
+    position: relative;
+}
+
+#mind, #scape {
+    font-size: 4em; /* Adjust size as needed */
+    color: white; /* Or any other color that fits the design */
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Adds a glowing effect */
+    padding: 0;
+    margin: 0;
+}
+
+.hidden {
+    opacity: 0; /* Start as invisible */
+    visibility: hidden; /* Hide the element */
+    transition: opacity 0.5s, visibility 0.5s; /* Smooth transition for fading in */
+    text-decoration: none;
+}
+
+#enter-link {
+    font-family: 'Source Sans Pro'; /* Or your chosen font */
+    font-size: 1em;
+    color: white; /* Or any other color that fits your design */
+    cursor: pointer; /* Indicates an interactive element */
+    text-align: center;
+    position: absolute;
+    top: 75%; /* Adjust based on where you want it on the screen */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    text-decoration: none;
+}
+
+#enter-link:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Glow effect */
+    transition: 0.7s;
+}
+
+#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure particles are behind other content */
+}
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        font-size: 24px; /* Smaller text on smaller screens */
+    }
+}

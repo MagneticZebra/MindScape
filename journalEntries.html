@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Entries</title>
+    <link rel="stylesheet" href="css/journalEntries.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+
+    <!-- Slide-out Navigation Menu -->
+    <div id="nav-menu" class="nav-closed">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+        <a href="mainPage.html">Home</a>
+        <a href="mentalHealth.html">Mental Health Hub</a>
+        <a href="selfBeliefs.html">Self-limiting Beliefs Workshop</a>
+        <a href="mindfulness.html">Mindfulness Zone</a>
+        <a href="learningCenter.html">Learning Center</a>
+        <a href="journalEntries.html">My entries</a>
+        <a href="myData.html">My data</a>
+    </div>
+
+    <div id="main-content">
+        <header>
+            <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
+            <h1>MindScape - Mental Heatlh Hub</h1>
+        </header>
+    
+        <main>
+            <h2>User Entries</h2>
+            <div id="entriesContainer" class="entries-container"></div>
+        </main>
+    </div>
+    <script src="js/journalEntries.js"></script>
+</body>
+</html>
