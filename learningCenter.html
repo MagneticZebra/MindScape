@@ -3,9 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Learning Center - MindScape</title>
+    <link rel="stylesheet" href="css/learningCenter.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
 </head>
 <body>
+    <!-- Slide-out Navigation Menu -->
+    <div id="nav-menu" class="nav-closed">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+        <a href="mainPage.html">Home</a>
+        <a href="mentalHealth.html">Mental Health Hub</a>
+        <a href="selfBeliefs.html">Self-limiting Beliefs Workshop</a>
+        <a href="mindfulness.html">Mindfulness Zone</a>
+        <a href="learningCenter.html">Learning Center</a>
+        <a href="journalEntries.html">My entries</a>
+        <a href="myData.html">My data</a>
+    </div>
+
+    <div id="main-content">
+        <header>
+            <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
+            <h1>Learning Center</h1>
+        </header>
     
+        <main>
+            <p id="introQuote"></p> <!-- Quote appears here -->
+            <div id="content">
+                <!-- Introduction Section -->
+                <section id="intro">
+                    <h2>Welcome to the Learning Center</h2>
+                    <p>Discover curated videos and resources on mental wellness, self-care, and personal growth.</p>
+                </section>
+
+                <!-- Featured Videos -->
+                <section id="featured-videos">
+                    <h2>Featured Videos</h2>
+                    <div class="video-grid">
+                        <div class="video-item">
+                            <video width="400" height="225" controls>
+                                <source src="videos/featured-video-1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>Featured Video 1: Mindfulness Practice</p>
+                        </div>
+                        <div class="video-item">
+                            <video width="400" height="225" controls>
+                                <source src="videos/featured-video-2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>Featured Video 2: Guided Meditation</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Learning Categories -->
+                <section id="learning-categories">
+                    <h2>Learning Categories</h2>
+                    <ul>
+                        <li><a href="#mindfulness-videos">Mindfulness Videos</a></li>
+                        <li><a href="#mental-health-articles">Mental Health Articles</a></li>
+                        <li><a href="#self-care-guides">Self-Care Guides</a></li>
+                        <li><a href="#personal-growth">Personal Growth</a></li>
+                    </ul>
+                </section>
+
+                <!-- Mindfulness Videos -->
+                <section id="mindfulness-videos">
+                    <h2>Mindfulness Videos</h2>
+                    <div class="video-grid">
+                        <div class="video-item">
+                            <video width="400" height="225" controls>
+                                <source src="videos/mindfulness-1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>Mindfulness Practice 1</p>
+                        </div>
+                        <div class="video-item">
+                            <video width="400" height="225" controls>
+                                <source src="videos/mindfulness-2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>Mindfulness Practice 2</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="js/learningCenter.js"></script>
 </body>
 </html>
