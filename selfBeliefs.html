@@ -1,3 +1,5 @@
+<!--Credit for form: https://github.com/Basir-PD/100-Projects-HTML-CSS-JavaScript/tree/master/32-%20Multi%20Step%20Form-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +43,7 @@
             <!-- Belief Submission Form -->
             <section id="belief-form">
                 <form action="#" class="form">
-                    <h1 class="text-center">Identify Self Limiting Beliefs</h1>
+                    <h1 class="text-center">Identify Your Self-Limiting Beliefs</h1>
                     <!-- Progress bar -->
                     <div class="progressbar">
                       <div class="progress" id="progress"></div>
@@ -120,8 +122,8 @@
                             <textarea name="question12" id="question12"></textarea>
                         </div>
                       <div class="btns-group">
-                        <a href="#" class="btn btn-prev">Previous</a>
-                        <a href="#" class="btn btn-next">Submit</a>
+                        <button class="btn btn-prev">Previous</button>
+                        <button class="btn btn-next" onclick="submitForm()">Submit</button>
                       </div>
                     </div>
                   </form>
@@ -130,11 +132,20 @@
             <!-- Display Board for Beliefs -->
             <section id="belief-board">
                 <h2>Your Self-Limiting Beliefs</h2>
-                <div id="beliefList"></div>
+                <div class="belief-columns">
+                    <div id="beliefList11" class="belief-column">
+                        <h3>Original Beliefs</h3>
+                    </div>
+                    <div class="divider"></div>
+                    <div id="beliefList12" class="belief-column">
+                        <h3>Transformed Beliefs</h3>
+                    </div>
+                </div>
                 <button onclick="clearStrikethrough()">Clear Completed Beliefs</button>
             </section>
         </main>
     </div>
     <script src="js/selfBeliefs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+// Credit for form: https://github.com/Basir-PD/100-Projects-HTML-CSS-JavaScript/tree/master/32-%20Multi%20Step%20Form
+
 function toggleMenu() {
     var menu = document.getElementById('nav-menu');
     var content = document.getElementById('main-content');
@@ -94,4 +96,28 @@ function updateProgressbar() {
 
   progress.style.width =
     ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+}
+
+function submitForm() {
+    const question11 = document.getElementById('question11').value.trim();
+    const question12 = document.getElementById('question12').value.trim();
+
+    // Display the responses in the respective sections
+    const beliefList11 = document.getElementById('beliefList11');
+    const beliefList12 = document.getElementById('beliefList12');
+
+    // Create elements for the responses
+    const entry11 = document.createElement('div');
+    entry11.textContent = question11;
+    beliefList11.appendChild(entry11);
+
+    const entry12 = document.createElement('div');
+    entry12.textContent = question12;
+    beliefList12.appendChild(entry12);
+    
+    Swal.fire({
+        title: "Form Completed",
+        text: "Your results are stored below for your convenience",
+        icon: "success"
+    });
 }

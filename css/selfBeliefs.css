@@ -1,3 +1,5 @@
+/*Credit for form: https://github.com/Basir-PD/100-Projects-HTML-CSS-JavaScript/tree/master/32-%20Multi%20Step%20Form*/
+
 html, body {
     background: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
     width: 100%;
@@ -133,13 +135,27 @@ button:hover {
     background-color: #45a049;
 }
 
-#beliefList div {
-    padding: 10px;
-    margin-top: 5px;
-    background: #e7e7e7;
-    border-radius: 4px;
-    cursor: pointer;
+.belief-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
+
+.belief-column {
+  flex: 1;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+}
+
+.divider {
+  width: 2px;
+  background-color: #ccc;
+  margin: 10px 20px;
+  height: auto; /* Adjust based on content height */
+}
+
 
 .strikethrough {
     text-decoration: line-through;
