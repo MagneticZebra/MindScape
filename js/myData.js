@@ -107,11 +107,16 @@ function generateInsights() {
     let insightMessage = '';
 
     if (counts.happy > counts.sad) {
-        insightMessage = `Great work! You've been feeling awesome lately which we love to see! Keep it up! 🌟`;
+        insightMessage = `Great work! You've been feeling awesome lately which we love to see! Keep it up! Don't forget to spread the love to others today in whatever way possible! 🌟`;
     } else if (counts.sad > counts.happy) {
-        insightMessage = `It seems like you've been having a difficult time lately. That's okay! Remember that it's okay to feel down sometimes. Take some time to care for yourself and reach out if you need support. 💙`;
+        insightMessage = `It seems like you've been having a difficult time lately. That's okay! Remember that it's okay to feel down sometimes. Take some time to care for yourself and reach out if you need support. 💙
+        Something\'s you might like to try are:
+        1. Walking outside for 10 minutes
+        2. Taking a short nap
+        3. Doing a meditation exercise/praying
+        4. Letting yourself feel what you're feeling (remember there's nothing wrong with feeling bad sometimes. We all do!)`;
     } else {
-        insightMessage = `You've been pretty balanced in terms of your emotions this month. That's amazing! Keep focusing on maintaining positivity and seek support when necessary. 💙`;
+        insightMessage = `You've been pretty balanced in terms of your emotions this month. That's amazing! Keep focusing on maintaining positivity and seek support when necessary.💙 Remember, life moves in peaks and troughs so I'm  sure you'll be feeling great again soon!`;
     }
 
     // Display the message in the insights section

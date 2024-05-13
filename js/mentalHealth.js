@@ -92,7 +92,7 @@ document.querySelectorAll('.emoji').forEach(emoji => {
                     }
                     inputBox.value = ''; // Clear the input box after submitting
                     responseContainer.style.display = 'none';
-                    //responseElement.style.display = 'none';
+                    responseElement.style.display = 'none';
                 }
             };
             moodRecords.push({

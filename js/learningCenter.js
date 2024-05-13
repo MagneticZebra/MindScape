@@ -1,4 +1,4 @@
-const quote = "\"The root of your problem is a lack of knowledge\" - Robert";
+const quote = "\"The root of every problem is a lack of knowledge\" - Robert Pianezza";
 const quoteElement = document.getElementById('introQuote');
 const contentElement = document.getElementById('content');
 

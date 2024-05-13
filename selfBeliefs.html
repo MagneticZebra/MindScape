@@ -3,9 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Self Limiting Beliefs Workshop</title>
+    <link rel="stylesheet" href="css/selfBeliefs.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 <body>
+    <!-- Slide-out Navigation Menu -->
+    <div id="nav-menu" class="nav-closed">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+        <a href="mainPage.html">Home</a>
+        <a href="mentalHealth.html">Mental Health Hub</a>
+        <a href="selfBeliefs.html">Self-limiting Beliefs Workshop</a>
+        <a href="mindfulness.html">Mindfulness Zone</a>
+        <a href="learningCenter.html">Learning Center</a>
+        <a href="journalEntries.html">My entries</a>
+        <a href="myData.html">My data</a>
+    </div>
+
+    <div id="main-content">
+        <header>
+            <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
+            <h1>Self Limiting Beliefs</h1>
+        </header>
     
+        <main>
+            <!-- Introductory Video -->
+            <section id="intro-video">
+                <h2>Welcome to the Self-Limiting Beliefs Workshop</h2>
+                <video controls>
+                    <source src="videos/intro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Learn what self-limiting beliefs are and how they might be holding you back.</p>
+            </section>
+
+            <!-- Belief Submission Form -->
+            <section id="belief-form">
+                <form action="#" class="form">
+                    <h1 class="text-center">Identify Self Limiting Beliefs</h1>
+                    <!-- Progress bar -->
+                    <div class="progressbar">
+                      <div class="progress" id="progress"></div>
+                      
+                      <div
+                        class="progress-step progress-step-active"
+                        data-title="Identification"
+                      ></div>
+                      <div class="progress-step" data-title="Questioning"></div>
+                      <div class="progress-step" data-title="Reframing"></div>
+                    </div>
+              
+                    <!-- Steps -->
+                    <div class="form-step form-step-active">
+                        <div class="input-group">
+                            <label for="question1">1. What are some things that, you know you wanted to work toward in life? List off 5-10.</label>
+                            <textarea name="question1" id="question1"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="question2">2. Which of those things did you tell yourself you would start, and then never follow through with doing? List all that apply.</label>
+                            <textarea name="question2" id="question2"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="question3">3. Now, why was that the case? Justify why you didn’t do them, even though you knew you wanted to? Try to do this using “I am/I was” sentences. An example would be “I am too busy”. 2-3 sentences for each should suffice.</label>
+                            <textarea name="question3" id="question3"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="question4">4. Which of those previous justifications have ‘negative’ connotations to them? Things like “I can’t, I don’t know how, I never __” </label>
+                            <textarea name="question4" id="question4"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="question5">5. Each of the answers to Question 4 are limiting beliefs. Reorient them below as “I don’t believe that I can ____”</label>
+                            <textarea name="question5" id="question5"></textarea>
+                        </div>
+                        <div class="">
+                            <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+                        </div>
+                    </div>
+                    <div class="form-step">
+                        <div class="input-group">
+                            <label for="question6">6. For each of the things that you told yourself you would start, and then never did (Question 2), are there other people currently doing those things? It doesn’t necessarily have to be someone you know, just someone. Find someone online who is doing each thing you never started.</label>
+                            <textarea name="question6" id="question6"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="question7">7. If they are capable of doing those things, why can’t you? What differentiates them from you? What makes them special, and you not?</label>
+                            <textarea name="question7" id="question7"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="question8">8. Are the answers to Question 7 things that can be learned? Can they be grown into? How would you do that in your life?</label>
+                            <textarea name="question8" id="question8"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="question9">9. Are the limiting beliefs from Question 5 congruent with your current goals and aspirations? If not, why? What makes those patterns of belief something that holds you back?</label>
+                            <textarea name="question9" id="question9"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="question10">10. What would your life look like if you weren’t functioning within the frame of those beliefs? How would your current situation be different? How would your goals and dreams be coming to fruition?</label>
+                            <textarea name="question10" id="question10"></textarea>
+                        </div>
+                        <div class="btns-group">
+                            <a href="#" class="btn btn-prev">Previous</a>
+                            <a href="#" class="btn btn-next">Next</a>
+                        </div>
+                    </div>
+                    <div class="form-step">
+                        <p>Within this section, it is vital to remember that these limiting beliefs you hold about yourself are not truth. Truth is relative.Truth is what you believe truth to be. 
+
+                            You’ve now identified what limiting beliefs you hold, questioned how valid they are, and envisioned your life if they didn't have power over you. Now, it is time to choose your truth.
+                            </p>
+                        <div class="input-group">
+                            <label for="question11">11. Refer back to Question 5. Copy and paste those answers.</label>
+                            <textarea name="question11" id="question11"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="question12">12. Change them to their inverse. If you wrote “I don’t believe I’m smart enough to start my own business” change it to “I believe I am smart enough…?</label>
+                            <textarea name="question12" id="question12"></textarea>
+                        </div>
+                      <div class="btns-group">
+                        <a href="#" class="btn btn-prev">Previous</a>
+                        <a href="#" class="btn btn-next">Submit</a>
+                      </div>
+                    </div>
+                  </form>
+            </section>
+
+            <!-- Display Board for Beliefs -->
+            <section id="belief-board">
+                <h2>Your Self-Limiting Beliefs</h2>
+                <div id="beliefList"></div>
+                <button onclick="clearStrikethrough()">Clear Completed Beliefs</button>
+            </section>
+        </main>
+    </div>
+    <script src="js/selfBeliefs.js"></script>
 </body>
 </html>
