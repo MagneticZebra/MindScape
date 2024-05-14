@@ -6,7 +6,6 @@ html, body {
 }
 
 header {
-    background-color: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
     color: #ECF0F1;
     text-align: left;
     width: 100%;
@@ -16,10 +15,11 @@ header {
     display: flex;
     justify-content: flex-start;  /* Adjusts horizontal spacing */
     margin-top: 5px;
+    width: 100%;
 }
 
 header h1 {
-  margin-left: 80px;  /* Adjust the value as needed to move the title right */
+  margin-left: 10px;  /* Adjust the value as needed to move the title right */
 }
 
 body, h1, a {
@@ -27,10 +27,6 @@ body, h1, a {
     padding: 0;
     font-family: Arial, sans-serif;
     box-sizing: border-box; /* Ensures padding does not affect the width */
-}
-
-h1 {
-    margin-left: 20px;
 }
 
 .material-symbols-outlined {
@@ -68,6 +64,12 @@ h1 {
 
 #main-content {
   transition: margin-left 0.5s ease;
+  width: 70%;
+  margin: 20px auto;
+  max-width: 1200px;
+  flex: 1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-open {
@@ -102,7 +104,7 @@ h1 {
 }
 
 /*------------------- Main Content -------------------*/
-#intro-video, #belief-form, #belief-board {
+#intro-video, #belief-form, #belief-board, #startForm {
     margin: 20px;
     padding: 20px;
     background: white;
@@ -113,6 +115,11 @@ h1 {
 #intro-video {
     text-align: center;
 }
+
+#startForm {
+  text-align: center;
+}
+
 
 input[type="text"] {
     width: 70%;
@@ -252,7 +259,7 @@ textarea {
   position: absolute;
   top: calc(100% + 0.5rem);
   font-size: 0.85rem;
-  color: #666;
+  color: #727171;
 }
 
 .progress-step-active {
@@ -265,7 +272,7 @@ textarea {
   width: 70%;
   margin: 0 auto;
   border: 1px solid #ccc;
-  border-radius: 0.35rem;
+  border-radius: 2rem;
   padding: 1.5rem;
 }
 

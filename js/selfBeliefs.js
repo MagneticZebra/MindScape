@@ -41,12 +41,20 @@ function addBelief() {
 }
 
 function clearStrikethrough() {
-    const list = document.getElementById('beliefList');
-    Array.from(list.children).forEach(child => {
-        if (child.classList.contains('strikethrough')) {
-            list.removeChild(child);
-        }
-    });
+    // Clear local storage
+    localStorage.removeItem('beliefsData');
+
+    // Clear the beliefs board
+    document.getElementById('originalBeliefs').innerHTML = '';
+    document.getElementById('transformedBeliefs').innerHTML = '';
+}
+
+//------------------------ Start Form ----------------
+
+// Function to show the form
+function startForm() {
+  document.getElementById('belief-form').style.display = 'block';
+  document.getElementById('startForm').style.display = 'none';
 }
 
 //------------------------ Form-----------------------
@@ -98,26 +106,150 @@ function updateProgressbar() {
     ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }
 
+// Function to handle form submission
 function submitForm() {
-    const question11 = document.getElementById('question11').value.trim();
-    const question12 = document.getElementById('question12').value.trim();
+  const question11 = document.getElementById('question11').value.trim();
+  const question12 = document.getElementById('question12').value.trim();
 
-    // Display the responses in the respective sections
-    const beliefList11 = document.getElementById('beliefList11');
-    const beliefList12 = document.getElementById('beliefList12');
+  // Display the responses in the respective sections
+  const originalBeliefs = document.getElementById('originalBeliefs');
+  const transformedBeliefs = document.getElementById('transformedBeliefs');
 
-    // Create elements for the responses
-    const entry11 = document.createElement('div');
-    entry11.textContent = question11;
-    beliefList11.appendChild(entry11);
+  // Clear previous entries
+  originalBeliefs.innerHTML = '';
+  transformedBeliefs.innerHTML = '';
 
-    const entry12 = document.createElement('div');
-    entry12.textContent = question12;
-    beliefList12.appendChild(entry12);
-    
-    Swal.fire({
-        title: "Form Completed",
-        text: "Your results are stored below for your convenience",
-        icon: "success"
-    });
+  const originalBeliefsArray = [];
+  const transformedBeliefsArray = [];
+
+  // Create elements for the responses
+  if (question11) {
+      const entry11 = document.createElement('div');
+      entry11.textContent = question11;
+      originalBeliefs.appendChild(entry11);
+      originalBeliefsArray.push(question11);
+  }
+
+  if (question12) {
+      const entry12 = document.createElement('div');
+      entry12.textContent = question12;
+      transformedBeliefs.appendChild(entry12);
+      transformedBeliefsArray.push(question12);
+  }
+
+  Swal.fire({
+    title: "Form Completed",
+    text: "Your results are stored below in the \"Beliefs Board\" for your convenience",
+    icon: "success"
+  });
+
+  // Save to local storage
+  saveBeliefsToLocalStorage(originalBeliefsArray, transformedBeliefsArray);
+
+  // Prevent default form submission
+  return false;
 }
+
+//-------------------- Local Storage Beliefs -------------------------
+// Function to save beliefs to local storage
+function saveBeliefsToLocalStorage(originalBeliefs, transformedBeliefs) {
+  const beliefsData = {
+      original: originalBeliefs,
+      transformed: transformedBeliefs
+  };
+  localStorage.setItem('beliefsData', JSON.stringify(beliefsData));
+}
+
+// Function to load beliefs from local storage
+function loadBeliefsFromLocalStorage() {
+  const beliefsData = localStorage.getItem('beliefsData');
+  if (beliefsData) {
+      const parsedData = JSON.parse(beliefsData);
+      const originalBeliefs = document.getElementById('originalBeliefs');
+      const transformedBeliefs = document.getElementById('transformedBeliefs');
+
+      // Clear previous entries
+      originalBeliefs.innerHTML = '';
+      transformedBeliefs.innerHTML = '';
+
+      // Display the beliefs
+      parsedData.original.forEach(belief => {
+          const entry = document.createElement('div');
+          entry.textContent = belief;
+          originalBeliefs.appendChild(entry);
+      });
+
+      parsedData.transformed.forEach(belief => {
+          const entry = document.createElement('div');
+          entry.textContent = belief;
+          transformedBeliefs.appendChild(entry);
+      });
+  }
+}
+
+// Load beliefs when the page loads
+window.onload = function() {
+  loadBeliefsFromLocalStorage();
+}
+
+//------------------ Download and Print Beliefs ------------------------
+// Function to format beliefs into a document and download it
+function downloadAndPrintBeliefs() {
+  const originalBeliefs = document.getElementById('originalBeliefs').innerText;
+  const transformedBeliefs = document.getElementById('transformedBeliefs').innerText;
+
+  const docContent = `
+  <html>
+  <head>
+      <title>My Beliefs</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              margin: 20px;
+          }
+          h2 {
+              text-align: center;
+          }
+          .belief-section {
+              margin-bottom: 20px;
+          }
+          .belief-section h3 {
+              margin-bottom: 10px;
+          }
+          .belief-section div {
+              margin-bottom: 5px;
+          }
+      </style>
+  </head>
+  <body>
+      <h2>My Beliefs Document (read this every night)</h2>
+      <div class="belief-section">
+          <h3>Old Beliefs</h3>
+          ${originalBeliefs.split('\n').map(belief => `<div>${belief}</div>`).join('')}
+      </div>
+      <div class="belief-section">
+          <h3>New Beliefs</h3>
+          ${transformedBeliefs.split('\n').map(belief => `<div>${belief}</div>`).join('')}
+      </div>
+  </body>
+  </html>
+  `;
+
+  // Create a Blob with the document content
+  const blob = new Blob([docContent], { type: 'text/html' });
+
+  // Create an anchor element and trigger the download
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'myBeliefs.html';
+  a.click();
+
+  // Open the document in a new window and trigger the print dialog
+  const newWindow = window.open();
+  newWindow.document.write(docContent);
+  newWindow.document.close();
+  newWindow.print();
+}
+
+
+

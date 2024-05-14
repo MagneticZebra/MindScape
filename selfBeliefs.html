@@ -8,7 +8,12 @@
     <title>Self Limiting Beliefs Workshop</title>
     <link rel="stylesheet" href="css/selfBeliefs.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
+    <style>
+        /* Hides the form initially */
+        #belief-form {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Slide-out Navigation Menu -->
@@ -37,12 +42,19 @@
                     <source src="videos/intro.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <p>Learn what self-limiting beliefs are and how they might be holding you back.</p>
+                <p>Learn what self-limiting beliefs are and how they are holding you back.</p>
             </section>
+
+            <section id="startForm">
+                <h2>Self-limiting Beliefs Quiz</h2>
+                <p>This quiz takes approximately 20-30 minutes.<br>Please only do this when you have time. DO NOT RUSH!</p>
+                <button id="startButton" onclick="startForm()">Start Quiz</button>
+            </section>
+            
 
             <!-- Belief Submission Form -->
             <section id="belief-form">
-                <form action="#" class="form">
+                <form class="form">
                     <h1 class="text-center">Identify Your Self-Limiting Beliefs</h1>
                     <!-- Progress bar -->
                     <div class="progressbar">
@@ -123,7 +135,7 @@
                         </div>
                       <div class="btns-group">
                         <button class="btn btn-prev">Previous</button>
-                        <button class="btn btn-next" onclick="submitForm()">Submit</button>
+                        <button class="btn btn-next" type="button" onclick="submitForm()">Submit</button>
                       </div>
                     </div>
                   </form>
@@ -131,17 +143,20 @@
 
             <!-- Display Board for Beliefs -->
             <section id="belief-board">
-                <h2>Your Self-Limiting Beliefs</h2>
+                <h2>Beliefs Board</h2>
                 <div class="belief-columns">
                     <div id="beliefList11" class="belief-column">
-                        <h3>Original Beliefs</h3>
+                        <h3>Old Beliefs</h3>
+                        <div id="originalBeliefs">Placeholder for old beliefs</div>
                     </div>
                     <div class="divider"></div>
                     <div id="beliefList12" class="belief-column">
-                        <h3>Transformed Beliefs</h3>
+                        <h3>New Beliefs</h3>
+                        <div id="transformedBeliefs">Placeholder for new beliefs</div>
                     </div>
                 </div>
-                <button onclick="clearStrikethrough()">Clear Completed Beliefs</button>
+                <button type="button" onclick="clearStrikethrough()">Clear Beliefs Board</button>
+                <button onclick="downloadAndPrintBeliefs()">Download and Print Beliefs</button>
             </section>
         </main>
     </div>
