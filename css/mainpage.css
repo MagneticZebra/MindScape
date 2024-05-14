@@ -115,22 +115,26 @@ main {
     background-image: url('../img/fire.jpg');
     background-size: cover; /* Cover ensures the image covers the entire box */
     background-position: center; /* Center the image within the box */
+    border-radius: 10px;
 }
 
 #self-beliefs { 
     background-image: url('../img/scenery.jpg');
     background-size: cover;
     background-position: center;
+    border-radius: 10px;
  }
 
 #mindfulness {
     background-image: url('../img/mindfulness.jpg');
     background-size: cover;
     background-position: center;
+    border-radius: 10px;
 }
 
 #learning-center {
     background-image: url('../img/library.jpg');
     background-size: cover;
     background-position: center;
+    border-radius: 10px;
 }

@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindScape</title>
-    <link rel="stylesheet" href="css/mainpage.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
-</head>
-<body>
-    <!-- Slide-out Navigation Menu -->
-    <div id="nav-menu" class="nav-closed">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
-        <a href="mainPage.html">Home</a>
-        <a href="mentalHealth.html">Mental Health Hub</a>
-        <a href="selfBeliefs.html">Self-limiting Beliefs Workshop</a>
-        <a href="mindfulness.html">Mindfulness Zone</a>
-        <a href="learningCenter.html">Learning Center</a>
-        <a href="journalEntries.html">My entries</a>
-        <a href="myData.html">My data</a>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MindScape</title>
+        <link rel="stylesheet" href="css/mainpage.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+    </head>
+    <body>
+        <!-- Slide-out Navigation Menu -->
+        <div id="nav-menu" class="nav-closed">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+            <a href="mainPage.html">Home</a>
+            <a href="mentalHealth.html">Mental Health Hub</a>
+            <a href="selfBeliefs.html">Self-limiting Beliefs Workshop</a>
+            <a href="mindfulness.html">Mindfulness Zone</a>
+            <a href="learningCenter.html">Learning Center</a>
+            <a href="journalEntries.html">My entries</a>
+            <a href="myData.html">My data</a>
+        </div>
 
-    <header>
-        <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
-        <h1>MindScape - Home</h1>
-    </header>
-    <main>
-        <a href="mentalHealth.html" class="section-box" id="mental-health">Mental Health Hub</a>
-        <a href="selfBeliefs.html" class="section-box" id="self-beliefs">Self-limiting Beliefs Workshop</a>
-        <a href="mindfulness.html" class="section-box" id="mindfulness">Mindfulness Zone</a>
-        <a href="learningCenter.html" class="section-box" id="learning-center">Learning Center</a>
-    </main>
+        <header>
+            <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
+            <h1>Welcome to MindScape!</h1>
+        </header>
+        <main>
+            <a href="mentalHealth.html" class="section-box" id="mental-health">Mental Health Hub</a>
+            <a href="selfBeliefs.html" class="section-box" id="self-beliefs">Self-limiting Beliefs Workshop</a>
+            <a href="mindfulness.html" class="section-box" id="mindfulness">Mindfulness Zone</a>
+            <a href="learningCenter.html" class="section-box" id="learning-center">Learning Center</a>
+        </main>
 
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById('nav-menu');
-            if (menu.style.left === '0px') {
-                menu.style.left = '-250px'; // Close the menu
-            } else {
-                menu.style.left = '0px'; // Open the menu
+        <script>
+            function toggleMenu() {
+                var menu = document.getElementById('nav-menu');
+                if (menu.style.left === '0px') {
+                    menu.style.left = '-250px'; // Close the menu
+                } else {
+                    menu.style.left = '0px'; // Open the menu
+                }
             }
-        }
 
-        function closeMenu() {
-            var menu = document.getElementById('nav-menu');
-            menu.style.left = '-250px'; // Ensures the menu closes
-        }
-    </script>
-</body>
+            function closeMenu() {
+                var menu = document.getElementById('nav-menu');
+                menu.style.left = '-250px'; // Ensures the menu closes
+            }
+        </script>
+    </body>
 </html>
