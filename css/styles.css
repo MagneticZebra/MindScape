@@ -63,11 +63,15 @@ body {
     left: 50%;
     transform: translateX(-50%); /* Center horizontally */
     text-decoration: none;
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove border */
+    padding: 15px; /* Padding for button size */
+    border-radius: 12px; /* Rounded corners */
 }
 
 #enter-link:hover {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Glow effect */
-    transition: 0.7s;
+    transition: 0.5s;
 }
 
 #particles {
