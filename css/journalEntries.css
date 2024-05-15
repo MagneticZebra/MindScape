@@ -33,18 +33,13 @@ h1 {
 h2 {
     margin-left: 20px;
     margin-top: 20px;
+    color: white;
 }
 
 .material-symbols-outlined {
     margin-left: 7px;
     font-size: 20px;
     cursor: pointer;
-}
-
-.mental-health-hub {
-    display: flex;
-    width: 100%;
-    height: 100%;
 }
 
 /* Menu Icon Styling */
@@ -113,7 +108,7 @@ h2 {
 }
 
 .entries-container {
-    margin-top: 20px;
+    margin: 20px;
     background-color: #708090; /* Lighter purple for entries background */
     padding: 10px;
     border-radius: 8px;

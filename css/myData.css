@@ -30,6 +30,10 @@ h1 {
     margin-left: 20px;
 }
 
+h2 {
+  color: white;
+}
+
 /* Menu Icon Styling */
 .menu-icon {
     cursor: pointer;
