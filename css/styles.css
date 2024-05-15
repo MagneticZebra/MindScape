@@ -33,6 +33,10 @@ body {
     position: relative;
 }
 
+.hidden-icon {
+  visibility: hidden;
+}
+
 #mind, #scape {
     font-size: 4em; /* Adjust size as needed */
     color: white; /* Or any other color that fits the design */
@@ -54,7 +58,7 @@ body {
 
 #enter-link {
     font-family: 'Source Sans Pro'; /* Or your chosen font */
-    font-size: 1em;
+    font-size: 0.8em;
     color: white; /* Or any other color that fits your design */
     cursor: pointer; /* Indicates an interactive element */
     text-align: center;
@@ -70,6 +74,7 @@ body {
 }
 
 #enter-link:hover {
+    background-color: #45a049; /* Darker green background on hover */
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Glow effect */
     transition: 0.5s;
 }

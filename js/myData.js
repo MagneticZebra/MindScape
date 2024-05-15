@@ -130,20 +130,34 @@ function toggleMenu() {
     var menuIcon = document.getElementsByClassName('menu-icon')[0]; // Get the menu icon element
 
     if (menu.style.left === '0px') {
-        menu.style.left = '-250px';
-        content.style.marginLeft = '0';
-        menuIcon.classList.remove('hidden-icon'); // Show the menu icon smoothly
+        closeMenu();
     } else {
         menu.style.left = '0px';
         content.style.marginLeft = '250px';
         menuIcon.classList.add('hidden-icon'); // Hide the menu icon smoothly
     }
-}   
+} 
 
 function closeMenu() {
     var menu = document.getElementById('nav-menu');
     var content = document.getElementById('main-content');
+    var menuIcon = document.getElementsByClassName('menu-icon')[0]; // Get the menu icon element
 
     menu.style.left = '-250px';
     content.style.marginLeft = '0';
+    menuIcon.classList.remove('hidden-icon'); // Show the menu icon smoothly
 }
+
+// Function to close the navigation menu when clicking outside of it
+function handleClickOutside(event) {
+    var menu = document.getElementById('nav-menu');
+    var menuIcon = document.getElementsByClassName('menu-icon')[0];
+
+    // Check if the click target is outside the menu and the menu icon
+    if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+        closeMenu();
+    }
+}
+
+// Attach the click event listener to the document
+document.addEventListener('click', handleClickOutside);

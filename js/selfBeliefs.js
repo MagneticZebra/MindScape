@@ -1,28 +1,42 @@
 // Credit for form: https://github.com/Basir-PD/100-Projects-HTML-CSS-JavaScript/tree/master/32-%20Multi%20Step%20Form
 
 function toggleMenu() {
-    var menu = document.getElementById('nav-menu');
-    var content = document.getElementById('main-content');
-    var menuIcon = document.getElementsByClassName('menu-icon')[0]; // Get the menu icon element
+  var menu = document.getElementById('nav-menu');
+  var content = document.getElementById('main-content');
+  var menuIcon = document.getElementsByClassName('menu-icon')[0]; // Get the menu icon element
 
-    if (menu.style.left === '0px') {
-        menu.style.left = '-250px';
-        content.style.marginLeft = '0';
-        menuIcon.classList.remove('hidden-icon'); // Show the menu icon smoothly
-    } else {
-        menu.style.left = '0px';
-        content.style.marginLeft = '250px';
-        menuIcon.classList.add('hidden-icon'); // Hide the menu icon smoothly
-    }
-}   
+  if (menu.style.left === '0px') {
+      closeMenu();
+  } else {
+      menu.style.left = '0px';
+      content.style.marginLeft = '250px';
+      menuIcon.classList.add('hidden-icon'); // Hide the menu icon smoothly
+  }
+} 
 
 function closeMenu() {
-    var menu = document.getElementById('nav-menu');
-    var content = document.getElementById('main-content');
+  var menu = document.getElementById('nav-menu');
+  var content = document.getElementById('main-content');
+  var menuIcon = document.getElementsByClassName('menu-icon')[0]; // Get the menu icon element
 
-    menu.style.left = '-250px';
-    content.style.marginLeft = '0';
+  menu.style.left = '-250px';
+  content.style.marginLeft = '0';
+  menuIcon.classList.remove('hidden-icon'); // Show the menu icon smoothly
 }
+
+// Function to close the navigation menu when clicking outside of it
+function handleClickOutside(event) {
+  var menu = document.getElementById('nav-menu');
+  var menuIcon = document.getElementsByClassName('menu-icon')[0];
+
+  // Check if the click target is outside the menu and the menu icon
+  if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+      closeMenu();
+  }
+}
+
+// Attach the click event listener to the document
+document.addEventListener('click', handleClickOutside);
 
 //---------------------- Main Content --------------------------
 function addBelief() {

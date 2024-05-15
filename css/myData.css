@@ -1,10 +1,9 @@
 html, body {
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
-    width: 100%;
+  background-color: #333333; /* Charcoal Gray */
+  width: 100%;
 }
 
 header {
-    background-color: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
     color: #ECF0F1;
     text-align: left;
     width: 100%;
@@ -53,9 +52,12 @@ h1 {
     z-index: 2000;
     top: 0;
     left: -250px;
-    background: linear-gradient(to right, #663399, #9575cd); /* Purple to lighter purple */
-    transition: 0.5s;
-    
+    background-color: #20C997; /* Teal */
+    transition: 0.5s; 
+  }
+
+  .hidden-icon {
+    visibility: hidden;
   }
   
   #main-content {

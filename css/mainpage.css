@@ -17,12 +17,11 @@ h1 {
 }
 
 body {
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
+    background-color: #333333; /* Charcoal Gray */
     font-family: 'Poppins', sans-serif;
 }
 
 header {
-    background-color: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
     color: #ECF0F1;
     text-align: left;
     padding: 20px 0;
@@ -45,11 +44,15 @@ header {
     height: 100%; /* Full-height */
     top: 0;
     left: -250px; /* Start off-screen */
-    background: linear-gradient(to right, #663399, #9575cd); /* Purple to lighter purple */
+    background-color: #20C997; /* Teal */
     overflow-x: hidden; /* Prevent horizontal scroll */
     transition: 0.3s; /* Smooth transition */
     padding-top: 60px; /* Space at the top */
     z-index: 1000; /* Make sure it's on top of other content */
+}
+
+.hidden-icon {
+    visibility: hidden;
 }
 
 #nav-menu a {

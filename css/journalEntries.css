@@ -1,10 +1,9 @@
 html, body {
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
-    width: 100%;
+  background-color: #333333; /* Charcoal Gray */
+  width: 100%;
 }
 
 header {
-    background-color: linear-gradient(to right, #6a11cb, #2575fc); /* Cool gradient background */
     color: #ECF0F1;
     text-align: left;
     width: 100%;
@@ -70,9 +69,8 @@ h2 {
   z-index: 2000;
   top: 0;
   left: -250px;
-  background: linear-gradient(to right, #663399, #9575cd); /* Purple to lighter purple */
+  background-color: #20C997; /* Teal */
   transition: 0.5s;
-  
 }
 
 #main-content {
@@ -81,6 +79,10 @@ h2 {
 
 .nav-open {
   left: 0; /* Position the menu on the screen */
+}
+
+.hidden-icon {
+  visibility: hidden;
 }
 
 .main-push {
@@ -112,7 +114,7 @@ h2 {
 
 .entries-container {
     margin-top: 20px;
-    background-color: #6A0DAD; /* Lighter purple for entries background */
+    background-color: #708090; /* Lighter purple for entries background */
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
@@ -121,7 +123,7 @@ h2 {
 .entry {
     margin-bottom: 15px;
     padding: 10px;
-    background-color: #7B4F9D; /* Distinct background for each entry */
+    background-color: #adacac; /* Distinct background for each entry */
     border-radius: 6px;
     position: relative;
 }
