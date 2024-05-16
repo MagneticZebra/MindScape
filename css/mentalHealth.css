@@ -163,17 +163,32 @@ h2 {
 
 .tableau-list li {
   background: #ffffff; /* white background for list items */
-    border: 1px solid #ddd;
-    border-radius: 8px; /* rounded corners */
-    margin-top: 10px;
-    padding: 10px 15px;
-    position: relative;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
-    transition: box-shadow 0.2s;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* rounded corners */
+  margin-top: 10px;
+  padding: 10px 15px;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
+  transition: box-shadow 0.2s;
+  flex-wrap: wrap;
 }
 
 .tableau-list li:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* more pronounced shadow on hover */
+}
+
+.tableau-list li button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove borders */
+  border-radius: 3px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.tableau-list li button.delete-btn {
+  background-color: #f44336; /* Red background for delete button */
 }
 
 .delete-btn {
@@ -190,12 +205,14 @@ h2 {
 }
 
 .delete-btn:hover {
-  color: #ff0000; /* change color on hover for emphasis */
+  color: #000000; /* change color on hover for emphasis */
 }
 
 /* Style the text inside the list for better readability */
 .tableau-list li span {
-  word-break: break-word; /* ensures the text wraps correctly */
+  word-wrap: break-word; /* ensures the text wraps correctly */
+  flex-grow: 1;
+  margin-right: 10px;
 }
 
 #journal-trigger-button {
@@ -210,6 +227,7 @@ h2 {
   font-size: 1.2rem;
   z-index: 999;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 #journal-panel {

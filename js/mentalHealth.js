@@ -5,26 +5,41 @@ function updateLocalStorage(tableauId, items) {
     localStorage.setItem(tableauId, JSON.stringify(items));
 }
 
-// Add a new item to the tableau
+// Add an edit button to each tableau item and handle editing
 function addItemToTableau(text, tableau, tableauId) {
     var list = tableau.querySelector('.tableau-list');
     var entry = document.createElement('li');
+    var textSpan = document.createElement('span');
     var deleteBtn = document.createElement('button');
+    var editBtn = document.createElement('button');
 
-    entry.textContent = text;
+    textSpan.textContent = text;
     deleteBtn.textContent = 'x';
     deleteBtn.className = 'delete-btn';
     deleteBtn.onclick = function() {
         list.removeChild(entry);
         // Update local storage after removal
-        updateLocalStorage(tableauId, Array.from(list.children).map(li => li.textContent.slice(0, -1))); // Slice to remove the 'x'
+        updateLocalStorage(tableauId, Array.from(list.children).map(li => li.firstChild.textContent));
     };
 
+    editBtn.textContent = 'edit';
+    editBtn.className = 'edit-btn';
+    editBtn.onclick = function() {
+        var newText = prompt("Edit your note:", textSpan.textContent);
+        if (newText !== null) {
+            textSpan.textContent = newText;
+            // Update local storage after editing
+            updateLocalStorage(tableauId, Array.from(list.children).map(li => li.firstChild.textContent));
+        }
+    };
+
+    entry.appendChild(textSpan);
     entry.appendChild(deleteBtn);
+    entry.appendChild(editBtn);
     list.appendChild(entry);
 
     // Update local storage with the new list
-    updateLocalStorage(tableauId, Array.from(list.children).map(li => li.textContent.slice(0, -1)));
+    updateLocalStorage(tableauId, Array.from(list.children).map(li => li.firstChild.textContent));
 }
 
 // Function to handle the Enter key event for submitting responses
