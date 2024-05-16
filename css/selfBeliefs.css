@@ -1,5 +1,8 @@
 /*Credit for form: https://github.com/Basir-PD/100-Projects-HTML-CSS-JavaScript/tree/master/32-%20Multi%20Step%20Form*/
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 html, body {
   background-color: #333333; /* Charcoal Gray */
   width: 100%;
@@ -20,6 +23,7 @@ header {
 
 header h1 {
   margin-left: 10px;  /* Adjust the value as needed to move the title right */
+  font-family: 'Montserrat', sans-serif;
 }
 
 body, h1, a {
@@ -91,6 +95,7 @@ body, h1, a {
   color: white;
   display: block;
   transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+  font-family: 'Roboto', sans-serif;
 }
 
 #nav-menu a:hover {

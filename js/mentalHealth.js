@@ -118,7 +118,7 @@ document.querySelectorAll('.emoji').forEach(emoji => {
     
             Swal.fire({
                 title: "Entry Saved Successfully",
-                text: "Your mood has been recorded for today!",
+                text: "Your mood has been recorded for today! Check \"My Data\"!",
                 icon: "success"
             });
         } else {
@@ -222,7 +222,7 @@ function submitEntry() {
 
         Swal.fire({
             title: "Entry Saved Successfully",
-            text: "Go to \"My entries\" to view",
+            text: "Go to \"My Entries\" to view",
             icon: "success"
         });
     } else {
