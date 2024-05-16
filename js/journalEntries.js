@@ -43,16 +43,16 @@ function loadEntries() {
     var entriesContainer = document.getElementById('entriesContainer');
     entriesContainer.innerHTML = ''; // Clear existing entries before loading new ones
 
-    entries.forEach(function(entry, index) {
+    // Reverse the entries array to show the newest entries first
+    entries.reverse().forEach(function(entry, index) {
         var div = document.createElement('div');
         div.innerHTML = `<p>${entry.content}</p>
                          <small>Submitted on: ${entry.date}</small>
-                         <button onclick="deleteEntry(${index})">Delete</button>`;
+                         <button onclick="deleteEntry(${entries.length - 1 - index})">Delete</button>`;
         div.className = 'entry';
         entriesContainer.appendChild(div);
     });
 }
-
 
 function deleteEntry(index) {
     var entries = JSON.parse(localStorage.getItem('userEntries')) || [];

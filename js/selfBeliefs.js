@@ -26,14 +26,18 @@ function closeMenu() {
 
 // Function to close the navigation menu when clicking outside of it
 function handleClickOutside(event) {
-  var menu = document.getElementById('nav-menu');
-  var menuIcon = document.getElementsByClassName('menu-icon')[0];
+    var menu = document.getElementById('nav-menu');
+    var menuIcon = document.getElementsByClassName('menu-icon')[0];
 
-  // Check if the click target is outside the menu and the menu icon
-  if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-      closeMenu();
-  }
+    // Check if the menu is open
+    if (menu.style.left === '0px') {
+        // Check if the click target is outside the menu and the menu icon
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            closeMenu();
+        }
+    }
 }
+
 
 // Attach the click event listener to the document
 document.addEventListener('click', handleClickOutside);
