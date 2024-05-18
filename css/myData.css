@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
 html, body {
   background-color: #333333; /* Charcoal Gray */
   width: 100%;
@@ -132,11 +131,14 @@ h2 {
 
 .emoji-graph {
     width: 500px !important; /* Set width */
-    height: auto !important; /* Set height */
-    display: block; /* Correct any layout issues */
+    height: 300px !important; /* Set height */
+    display: flex; /* Correct any layout issues */
     background-color: #f0f0f0; /* Placeholder for graphs */
-    margin-top: 10px;
+    margin: 10px;
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* Insights Section Enhancements */
@@ -158,10 +160,12 @@ h2 {
 
 /* Adding a shadow for depth */
 #insights {
+  background-color: #fff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 20px;
   margin-top: 20px;
   border-radius: 8px;
+  margin: 20px;
 }
 
 

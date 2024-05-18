@@ -3,20 +3,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const monthName = currentDate.toLocaleString('default', { month: 'long' });
     document.getElementById('monthName').textContent = `${monthName} Tracking`; // Updates the month name dynamically
 
-    loadMoodDataAndRenderCharts(currentDate.getFullYear(), currentDate.getMonth() + 1);
+    loadMoodDataAndRenderChart(currentDate.getFullYear(), currentDate.getMonth() + 1);
     generateInsights(); // Call the function to generate insights on page load
 });
 
 
-function loadMoodDataAndRenderCharts(year, month) {
+function loadMoodDataAndRenderChart(year, month) {
     const moodRecords = JSON.parse(localStorage.getItem('moodRecords')) || [];
     const daysInMonth = new Date(year, month, 0).getDate(); // Get number of days in the month
 
-    const moodData = {
-        sad: new Array(daysInMonth).fill(0),
-        neutral: new Array(daysInMonth).fill(0),
-        happy: new Array(daysInMonth).fill(0)
-    };
+    const moodData = new Array(daysInMonth).fill(null);
 
     moodRecords.forEach(record => {
         const recordDate = new Date(record.date);
@@ -24,68 +20,114 @@ function loadMoodDataAndRenderCharts(year, month) {
             const day = recordDate.getDate() - 1; // Adjust because array is 0-indexed
             switch(record.emoji) {
                 case '😢':
-                    moodData.sad[day]++;
+                    moodData[day] = 0;
                     break;
                 case '😐':
-                    moodData.neutral[day]++;
+                    moodData[day] = 1;
                     break;
                 case '😊':
-                    moodData.happy[day]++;
+                    moodData[day] = 2;
                     break;
             }
         }
     });
 
-    renderChart('sadChart', 'Sad Mood Count', moodData.sad, '#ff6384');
-    renderChart('neutralChart', 'Neutral Mood Count', moodData.neutral, '#ffcd56');
-    renderChart('happyChart', 'Happy Mood Count', moodData.happy, '#36a2eb');
+    renderMoodChart('moodChart', moodData, daysInMonth);
 }
 
-
-function renderChart(canvasId, label, data, color) {
+function renderMoodChart(canvasId, moodData, daysInMonth) {
     const ctx = document.getElementById(canvasId).getContext('2d');
+
     new Chart(ctx, {
-        type: 'bar', // Or 'line', 'bar', etc., depending on your specific setup
+        type: 'line',
         data: {
-            labels: Array.from({ length: data.length }, (_, i) => i + 1),
-            datasets: [{
-                label: label,
-                data: data,
-                backgroundColor: color,
-                borderColor: color,
-                borderWidth: 1
-            }]
+            labels: Array.from({ length: daysInMonth }, (_, i) => i + 1),
+            datasets: [
+                {
+                    label: 'Mood',
+                    data: moodData,
+                    fill: false,
+                    tension: 0.4,  // Smooth the line
+                    spanGaps: true,  // Allows line to span gaps in the data
+                    borderColor: function(context) {
+                        const index = context.dataIndex;
+                        const value = context.dataset.data[index];
+                        if (value === 0) return '#ff6384'; // Sad
+                        if (value === 1) return '#ffcd56'; // Neutral
+                        return '#36a2eb'; // Happy
+                    },
+                    backgroundColor: function(context) {
+                        const index = context.dataIndex;
+                        const value = context.dataset.data[index];
+                        if (value === 0) return '#ff6384'; // Sad
+                        if (value === 1) return '#ffcd56'; // Neutral
+                        return '#36a2eb'; // Happy
+                    },
+                    pointBackgroundColor: function(context) {
+                        const value = context.raw;
+                        return value === 0 ? '#ff6384' : value === 1 ? '#ffcd56' : '#36a2eb';
+                    },
+                    pointBorderColor: function(context) {
+                        const value = context.raw;
+                        return value === 0 ? '#ff6384' : value === 1 ? '#ffcd56' : '#36a2eb';
+                    },
+                    pointStyle: 'circle',
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }
+            ]
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false, // This will allow custom sizes
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true,
+                    min: -0.7,
+                    max: 2.7,
                     ticks: {
-                        fontSize: 14 // Increase y-axis tick font size
+                        callback: function(value) {
+                            const emojis = ['😢', '😐', '😊'];
+                            return emojis[value];
+                        },
+                        font: {
+                            size: 24  // Increase the font size to make emojis larger
+                        },
+                        stepSize: 1
                     }
                 },
                 x: {
-                    title: {
-                        display: true,
-                        text: 'Day of the Month',
-                        fontSize: 16 // Increase x-axis title font size
-                    },
                     ticks: {
-                        fontSize: 12 // Increase x-axis tick font size
+                        font: {
+                            size: 12
+                        }
                     }
                 }
             },
             plugins: {
                 legend: {
-                    labels: {
-                        fontSize: 14 // Increase legend font size
-                    }
+                    display: false
                 },
                 tooltip: {
-                    bodyFontSize: 14, // Increase tooltip font size
+                    callbacks: {
+                        label: function(context) {
+                            const emojis = ['😢', '😐', '😊'];
+                            return emojis[context.raw];
+                        }
+                    },
+                    bodyFontSize: 14,
                     titleFontSize: 16
+                },
+                title: {
+                    display: true,
+                    text: 'Mood Chart',
+                    font: {
+                        size: 24
+                    },
+                    padding: {
+                        top: 10,
+                        bottom: 30
+                    }
                 }
             }
         }
