@@ -375,4 +375,51 @@ button#close-journal-panel:hover {
   margin-left: 50px;
 }
 
+/*-------------- Media Queries -------------*/
+@media (max-width: 600px) {
+  header .menu-icon {
+      font-size: 24px;
+  }
+
+  header {
+      padding: 10px 0;
+  }
+
+  #main-content {
+      padding: 10px;
+  }
+
+  .mental-health-hub, #journal-panel {
+      width: 100%;
+      margin: auto;
+      padding: 10px;
+  }
+
+  .mood-tracker, .reflection {
+      padding: 15px;
+      margin: 5px 0;
+  }
+
+  .emoji-container {
+      flex-direction: row;
+  }
+
+  .emoji {
+      margin: 0 5px;
+  }
+
+  textarea {
+      padding: 8px;
+      margin: 8px 0;
+  }
+
+  button {
+      padding: 8px 16px;
+  }
+
+  #journal-trigger-button {
+      width: calc(100% - 20px);
+      margin: 10px auto;
+  }
+}
 

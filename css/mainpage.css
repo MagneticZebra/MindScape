@@ -52,7 +52,8 @@ header {
     overflow-x: hidden; /* Prevent horizontal scroll */
     transition: 0.3s; /* Smooth transition */
     padding-top: 60px; /* Space at the top */
-    z-index: 1000; /* Make sure it's on top of other content */
+    z-index: 1; /* Make sure it's on top of other content */
+    display: block;
 }
 
 .hidden-icon {
@@ -96,6 +97,7 @@ main {
     height: calc(100% - 50px); /* Subtracts the height of the header */
     width: 100%;
 }
+
 
 .section-box {
     flex: 1 0 50%; /* Each box takes up half of the width and height */
@@ -145,4 +147,26 @@ main {
     background-size: cover;
     background-position: center;
     border-radius: 10px;
+}
+
+/*--------------Media Queries-----------------*/
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    .section-box {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    #nav-menu a {
+        font-size: 20px;
+        padding: 8px 8px 8px 16px;
+    }
+
+    #nav-menu .closebtn {
+        font-size: 30px;
+        right: 15px;
+    }
 }
