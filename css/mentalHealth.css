@@ -44,33 +44,32 @@ h2 {
     cursor: pointer;
 }
 
-
 .mental-health-hub {
-    display: flex;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .mood-tracker {
-    text-align: center;
-    justify-content: center;
-    align-items: center; /* Center items horizontally */
-    padding: 20px;
-    width: 50%;
-    flex-direction: row;
-    color: white;
-  }
-  
-  .emoji {
-    font-size: 3rem; /* Adjust size as necessary */
-    margin: 0 10px;
-    cursor: pointer; /* Indicates that emojis are clickable */
-    display: inline-block;
-  }
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
 
-  .emoji:hover {
-    scale: 1.1;
-  }
+.mood-tracker {
+  text-align: center;
+  justify-content: center;
+  align-items: center; /* Center items horizontally */
+  padding: 20px;
+  width: 50%;
+  flex-direction: row;
+  color: white;
+}
+
+.emoji {
+  font-size: 3rem; /* Adjust size as necessary */
+  margin: 0 10px;
+  cursor: pointer; /* Indicates that emojis are clickable */
+  display: inline-block;
+}
+
+.emoji:hover {
+  scale: 1.1;
+}
 
 /* Ensure the emoji response message and input box are centered */
 #emoji-response {
@@ -175,6 +174,9 @@ h2 {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
   transition: box-shadow 0.2s;
   flex-wrap: wrap;
+  display: flex; /* Use flexbox to align items */
+  justify-content: space-between; /* Space items apart */
+  align-items: center; /* Center items vertically */
 }
 
 .tableau-list li:hover {
@@ -377,49 +379,84 @@ button#close-journal-panel:hover {
 
 /*-------------- Media Queries -------------*/
 @media (max-width: 600px) {
-  header .menu-icon {
-      font-size: 24px;
+  header {
+      flex-direction: column;
+      text-align: center;
   }
 
-  header {
-      padding: 10px 0;
-  }
+  header h1 {
+    font-size: 30px;
+    margin-left: 10px;
+}
 
   #main-content {
       padding: 10px;
   }
 
-  .mental-health-hub, #journal-panel {
+  .mental-health-hub {
       width: 100%;
-      margin: auto;
-      padding: 10px;
+      display: block; /* Disable flexbox and use block layout */
   }
 
-  .mood-tracker, .reflection {
-      padding: 15px;
-      margin: 5px 0;
+  .mood-tracker {
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: center;
   }
 
   .emoji-container {
-      flex-direction: row;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
   }
 
   .emoji {
       margin: 0 5px;
+      font-size: 2.5rem; /* Adjust size for smaller screens */
+      display: inline-block;
   }
 
-  textarea {
-      padding: 8px;
-      margin: 8px 0;
+  .reflection {
+    width: calc(100% - 30px); /* Full width of the screen with padding adjustment */
+      display: block; /* Disable flexbox and use block layout */
+      margin-bottom: 20px;
   }
 
-  button {
-      padding: 8px 16px;
+  .reflection h2 {
+    color: #000000;
+  }
+
+  .wins, .lessons {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      background: #f3f3f3; /* Light gray background */
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      box-sizing: border-box;
+  }
+
+  #response-input {
+      width: calc(100% - 30px);
+  }
+
+  #response-submit {
+      padding: 10px;
+      font-size: 0.9rem;
+  }
+
+  .tableau-list li {
+      padding: 10px;
   }
 
   #journal-trigger-button {
-      width: calc(100% - 20px);
-      margin: 10px auto;
+    width: 100%; /* Full width of the screen */
+    box-sizing: border-box; /* Ensures padding is included in the width */
   }
-}
 
+  #journal-textarea {
+    width: calc(100% - 20px); /* Full width of the screen with padding adjustment */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    height: 500px; /* Adjust height as needed */
+}
+}

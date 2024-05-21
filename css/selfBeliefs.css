@@ -338,79 +338,65 @@ textarea {
 }
 
 @media (max-width: 600px) {
-    header .menu-icon {
-        font-size: 24px;
-    }
+  header .menu-icon {
+      font-size: 24px;
+  }
 
-    header {
-        padding: 10px 0;
-    }
+  header {
+      padding: 10px 0;
+      flex-direction: row;
+      justify-content: space-between;
+  }
 
-    #main-content {
-        padding: 10px;
-    }
-
-    #intro-video,
-    #startForm,
-    #belief-form,
-    #belief-board {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0;
-    }
-
-    .input-group {
-        margin: 8px 0;
-    }
-
-    textarea {
-        padding: 8px;
-        margin: 8px 0;
-    }
-
-    button,
-    .btn {
-        padding: 8px 16px;
-    }
-
-    .belief-column {
-        margin: 5px 0;
-    }
-}
-
-/* New styles for better alignment and spacing */
-#intro-video h2,
-#startForm h2 {
-    text-align: center;
+  header h1 {
     font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-#intro-video p,
-#startForm p {
-    text-align: center;
-    font-size: 1em;
-    margin-bottom: 20px;
-}
-
-#intro-video video {
-    display: block;
-    margin: 0 auto 20px auto;
-}
-
-button,
-.btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-}
-
-/* Title formatting */
-header h1 {
-    font-size: 1.7em;
-    text-align: center;
     margin: 0;
-    padding: 10px 0;
-    line-height: 1.2;
+    padding: 0 10px;
+    text-align: left;
+    flex-grow: 1;
+  }
+
+  #main-content {
+      padding: 10px;
+      width: 100%;
+  }
+
+  #intro-video,
+  #startForm,
+  #belief-form,
+  #belief-board {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0;
+  }
+
+  .input-group {
+      margin: 8px 0;
+  }
+
+  textarea {
+      padding: 8px;
+      margin: 8px 0;
+  }
+
+  button,
+  .btn {
+      padding: 8px 16px;
+      width: 100%;
+      margin: 5px;
+  }
+
+  .belief-column {
+      margin: 5px 0;
+  }
+
+  .belief-columns {
+      display: block; /* Stack the belief columns vertically */
+  }
+
+  .divider {
+      display: none; /* Hide the divider on small screens */
+  }
 }
+
+

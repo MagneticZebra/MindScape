@@ -209,5 +209,86 @@ section h2 {
     margin-top: 10px;
 }
 
+/*---------- Media Queries ------------*/
+@media (max-width: 600px) {
+  header {
+      padding: 10 0px;
+  }
+
+  header h1 {
+      font-size: 1.5em;
+      margin-left: 50px;
+      padding: 0 10px;
+      flex-grow: 1;
+      text-align: left;
+  }
+
+  header .menu-icon {
+      font-size: 24px;
+      margin-left: 10px;
+  }
+
+  #main-content {
+      padding: 10px;
+      width: 100%;
+  }
+
+  #introQuote {
+      font-size: 2em; /* Adjust font size for smaller screens */
+      padding: 0 10px;
+  }
+
+  #scrollable-content {
+      padding: 10px;
+      margin-top: 10px;
+      width: calc(100% - 40px); /* Full width of the screen with padding adjustment */
+  }
+
+  .section-content {
+      flex-direction: column; /* Stack text and video vertically */
+      align-items: center;
+  }
+
+  .section-text {
+      margin-bottom: 20px; /* Add space between text and video */
+      text-align: center; /* Center text for better readability */
+  }
+
+  .section-video {
+      margin-right: 0; /* Remove right margin */
+  }
+
+  video {
+      width: 100%; /* Make video full width */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  #learning-categories ul {
+      flex-direction: column; /* Stack categories vertically */
+      gap: 5px;
+  }
+
+  #learning-categories ul li {
+      width: 100%;
+  }
+
+  .video-grid {
+      flex-direction: column; /* Stack videos vertically */
+      gap: 10px;
+  }
+
+  .video-item {
+      width: 100%; /* Full width */
+  }
+
+  .video-item video {
+      width: 100%; /* Full width */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  .video-item p {
+      font-size: 1em;
+  }
+}
 
 

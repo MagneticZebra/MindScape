@@ -81,11 +81,11 @@ header {
 
 /* Close button */
 .closebtn {
-position: absolute;
-top: 0;
-right: 10px;
-font-size: 36px;
-margin-left: 50px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 50px;
 }
   
 
@@ -152,12 +152,13 @@ main {
 /*--------------Media Queries-----------------*/
 @media (max-width: 600px) {
     header h1 {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .section-box {
         padding: 15px;
         font-size: 14px;
+        font-size: 20px;
     }
 
     #nav-menu a {
@@ -169,4 +170,6 @@ main {
         font-size: 30px;
         right: 15px;
     }
+
+
 }

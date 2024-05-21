@@ -26,7 +26,6 @@ header h1 {
 body, h1, a {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     box-sizing: border-box; /* Ensures padding does not affect the width */
 }
 
@@ -145,13 +144,18 @@ section {
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: #fff;
-    font-family: 'Lobster', cursive;
+    
 }
 
 section h2 {
     font-size: 2em;
     margin-bottom: 10px;
     color: #ffd700; /* Gold color for section titles */
+    font-family: 'Lobster', cursive;
+}
+
+section p {
+    font-family: 'Lobster', cursive;
 }
 
 section p, section ul {
@@ -203,6 +207,60 @@ video {
     border-radius: 20px;
 }
 
+@media (max-width: 600px) {
+    header {
+        padding: 10 0px;
+    }
+
+    header h1 {
+        font-size: 1em;
+        margin-left: 50px;
+        padding: 0 10px;
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    header .menu-icon {
+        font-size: 24px;
+        margin-left: 10px;
+    }
+
+    #main-content {
+        padding: 10px;
+        width: 100%;
+    }
+
+    #introQuote {
+        font-size: 2em; /* Adjust font size for smaller screens */
+        padding: 0 10px;
+    }
+
+    #scrollable-content {
+        padding: 10px;
+        margin-top: 10px;
+        width: calc(100% - 40px); /* Full width of the screen with padding adjustment */
+        height: 100%;
+    }
+
+    .section-content {
+        flex-direction: column; /* Stack text and video vertically */
+        align-items: center;
+    }
+
+    .section-text {
+        margin-bottom: 20px; /* Add space between text and video */
+        text-align: left; /* Center text for better readability */
+    }
+
+    .section-video {
+        margin-right: 0; /* Remove right margin */
+    }
+
+    video {
+        width: 100%; /* Make video full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
 
 
 
