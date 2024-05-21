@@ -103,15 +103,6 @@ h2 {
   color: #333; /* Darker text color on hover */
 }
 
-/* Close button */
-.closebtn {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
 .entries-container {
     margin: 20px;
     background-color: #708090; /* Lighter purple for entries background */
@@ -140,21 +131,68 @@ h2 {
     color: #E6E6FA; /* Light lavender for timestamps */
 }
 
-button {
-    padding: 5px 10px;
-    font-size: 14px;
-    color: #FFFFFF;
-    background-color: #FF6347; /* Vivid red for delete button */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    position: absolute;
-    right: 10px;
-    top: 10px; /* Position the delete button in the top right corner of the entry */
+/* Styling for the close button */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 2500;
 }
 
-button:hover {
-    background-color: #E53E30; /* Darker red on hover for feedback */
+/* Styling for edit and delete buttons */
+button.edit-btn, button.delete-btn {
+  padding: 7px;
+  font-size: 14px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  align-self: center;
 }
 
+button.edit-btn {
+  background-color: #4CAF50; /* Green for edit button */
+  right: 70px; /* Adjusted position to be next to delete button */
+}
 
+button.edit-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+button.delete-btn {
+  background-color: #FF6347; /* Vivid red for delete button */
+  right: 10px;
+}
+
+button.delete-btn:hover {
+  background-color: #E53E30; /* Darker red on hover for feedback */
+}
+
+/* Style for edit textarea */
+.entry textarea {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Additional button styling for Save button */
+.entry button {
+  margin-right: 10px;
+}
+
+.entry button:last-child {
+  background-color: #FF6347; /* Vivid red for delete button */
+}
+
+.entry button:last-child:hover {
+  background-color: #E53E30; /* Darker red on hover for feedback */
+}

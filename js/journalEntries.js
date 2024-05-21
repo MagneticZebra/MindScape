@@ -41,22 +41,42 @@ document.addEventListener('click', handleClickOutside);
 function loadEntries() {
     var entries = JSON.parse(localStorage.getItem('userEntries')) || [];
     var entriesContainer = document.getElementById('entriesContainer');
-    entriesContainer.innerHTML = ''; // Clear existing entries before loading new ones
+    entriesContainer.innerHTML = '';
 
-    // Reverse the entries array to show the newest entries first
     entries.reverse().forEach(function(entry, index) {
         var div = document.createElement('div');
-        div.innerHTML = `<p>${entry.content}</p>
+        div.innerHTML = `<p id="entry-content-${entries.length - 1 - index}">${entry.content}</p>
                          <small>Submitted on: ${entry.date}</small>
-                         <button onclick="deleteEntry(${entries.length - 1 - index})">Delete</button>`;
+                         <button class="edit-btn" onclick="editEntry(${entries.length - 1 - index})">Edit</button>
+                         <button class="delete-btn" onclick="deleteEntry(${entries.length - 1 - index})">Delete</button>`;
         div.className = 'entry';
         entriesContainer.appendChild(div);
     });
 }
 
+
+function editEntry(index) {
+    var entries = JSON.parse(localStorage.getItem('userEntries')) || [];
+    var entryContent = document.getElementById(`entry-content-${index}`);
+    var currentContent = entryContent.innerText;
+
+    entryContent.innerHTML = `<textarea id="edit-textarea-${index}" rows="4" cols="50">${currentContent}</textarea>
+                              <button onclick="saveEntry(${index})">Save</button>`;
+}
+
+function saveEntry(index) {
+    var entries = JSON.parse(localStorage.getItem('userEntries')) || [];
+    var editedContent = document.getElementById(`edit-textarea-${index}`).value;
+
+    entries[index].content = editedContent;
+    localStorage.setItem('userEntries', JSON.stringify(entries));
+
+    loadEntries();
+}
+
 function deleteEntry(index) {
     var entries = JSON.parse(localStorage.getItem('userEntries')) || [];
-    entries.splice(index, 1); // Remove the entry at the specified index
-    localStorage.setItem('userEntries', JSON.stringify(entries)); // Update local storage
-    loadEntries(); // Reload entries to update the display
+    entries.splice(index, 1);
+    localStorage.setItem('userEntries', JSON.stringify(entries));
+    loadEntries();
 }
