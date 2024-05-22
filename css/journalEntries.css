@@ -201,56 +201,73 @@ button.delete-btn:hover {
 @media (max-width: 600px) {
   html, body {
       overflow-x: hidden; /* Prevent horizontal scrolling */
-      width: calc(100% - 10px); /* Full width of the screen with padding adjustment */
   }
 
   header {
+      display: flex;
       flex-direction: row;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       padding: 10px;
+      box-sizing: border-box; /* Ensure padding doesn't affect width */
+      width: 100%;
   }
 
   header h1 {
       font-size: 1.5em;
       margin: 0;
-      padding: 0 10px;
+      padding: 0;
       flex-grow: 1;
-      text-align: left;
+      text-align: center; /* Center-align the title */
   }
 
   .menu-icon {
       font-size: 24px;
-      margin-left: 10px;
+      margin-right: 10px; /* Add some space between the icon and the title */
   }
 
   #main-content {
       padding: 10px;
       margin-left: 0; /* Remove margin to fit the content */
       width: 100%;
+      box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+
+  #nav-menu {
+      width: 200px;
+      left: -200px;
+  }
+
+  .nav-open {
+      left: 0;
   }
 
   .main-push {
       margin-left: 200px;
   }
 
+  #nav-menu a {
+      font-size: 18px;
+      padding: 8px 10px;
+  }
+
   #entriesContainer {
       margin: 10px 0;
       padding: 10px;
       width: 100%;
-      box-sizing: border-box;
+      box-sizing: border-box; /* Ensure padding doesn't affect width */
   }
 
   .entry {
-      margin: 15px;
-   
+      margin-bottom: 15px;
+      padding: 15px;
       background-color: #adacac; /* Distinct background for each entry */
       border-radius: 6px;
       display: flex;
       flex-direction: column;
       gap: 10px;
       width: 100%; /* Full width for mobile */
-      box-sizing: border-box;
+      box-sizing: border-box; /* Ensure padding doesn't affect width */
   }
 
   .entry p {
@@ -272,7 +289,7 @@ button.delete-btn:hover {
   }
 
   button.edit-btn, button.delete-btn {
-      padding: 15px 5px;
+      padding: 10 10px;
       font-size: 14px; /* Adjusted font size */
       color: #FFFFFF;
       border: none;
@@ -297,17 +314,18 @@ button.delete-btn:hover {
       background-color: #E53E30; /* Darker red on hover for feedback */
   }
 
-  /* Style for edit textarea */
-  .entry textarea {
+  /* Style for edit content text area */
+  #entry-content {
       width: 100%; /* Full width for mobile */
       padding: 10px;
       margin-bottom: 10px;
       font-size: 14px; /* Adjusted font size */
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 10px;
       resize: vertical; /* Allow vertical resizing */
   }
 }
+
 
 
 
