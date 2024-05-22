@@ -196,3 +196,119 @@ button.delete-btn:hover {
 .entry button:last-child:hover {
   background-color: #E53E30; /* Darker red on hover for feedback */
 }
+
+/*------------ Media Query -------------*/
+@media (max-width: 600px) {
+  html, body {
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+      width: calc(100% - 10px); /* Full width of the screen with padding adjustment */
+  }
+
+  header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+  }
+
+  header h1 {
+      font-size: 1.5em;
+      margin: 0;
+      padding: 0 10px;
+      flex-grow: 1;
+      text-align: left;
+  }
+
+  .menu-icon {
+      font-size: 24px;
+      margin-left: 10px;
+  }
+
+  #main-content {
+      padding: 10px;
+      margin-left: 0; /* Remove margin to fit the content */
+      width: 100%;
+  }
+
+  .main-push {
+      margin-left: 200px;
+  }
+
+  #entriesContainer {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+  }
+
+  .entry {
+      margin: 15px;
+   
+      background-color: #adacac; /* Distinct background for each entry */
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%; /* Full width for mobile */
+      box-sizing: border-box;
+  }
+
+  .entry p {
+      margin: 0;
+      font-size: 16px; /* Increased font size for better readability */
+      word-break: break-word; /* Ensure long words break correctly */
+  }
+
+  .entry small {
+      display: block;
+      font-size: 14px; /* Increased font size for better readability */
+      color: #E6E6FA; /* Light lavender for timestamps */
+  }
+
+  .entry .button-group {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+  }
+
+  button.edit-btn, button.delete-btn {
+      padding: 15px 5px;
+      font-size: 14px; /* Adjusted font size */
+      color: #FFFFFF;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      flex: 1; /* Equal width buttons */
+  }
+
+  button.edit-btn {
+      background-color: #4CAF50; /* Green for edit button */
+  }
+
+  button.edit-btn:hover {
+      background-color: #45a049; /* Darker green on hover */
+  }
+
+  button.delete-btn {
+      background-color: #FF6347; /* Vivid red for delete button */
+  }
+
+  button.delete-btn:hover {
+      background-color: #E53E30; /* Darker red on hover for feedback */
+  }
+
+  /* Style for edit textarea */
+  .entry textarea {
+      width: 100%; /* Full width for mobile */
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 14px; /* Adjusted font size */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical; /* Allow vertical resizing */
+  }
+}
+
+
+
+

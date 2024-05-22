@@ -254,7 +254,7 @@ h2 {
 
 #journal-textarea {
   width: 100%;
-  height: 500px; /* Sufficient space for writing */
+  height: 450px; /* Sufficient space for writing */
   background-color: #f8f8f8; /* Slightly off-white for less strain on eyes */
   border: 2px solid #ccc; /* Subtle border */
   padding: 10px;
@@ -391,6 +391,7 @@ button#close-journal-panel:hover {
 
   #main-content {
       padding: 10px;
+      width: calc(100% - 20px); /* Full width of the screen with padding adjustment */
   }
 
   .mental-health-hub {
@@ -452,6 +453,10 @@ button#close-journal-panel:hover {
   #journal-trigger-button {
     width: 100%; /* Full width of the screen */
     box-sizing: border-box; /* Ensures padding is included in the width */
+  }
+
+  #journal-panel {
+    width: calc(100% - 70px); /* Full width of the screen with padding adjustment */
   }
 
   #journal-textarea {
