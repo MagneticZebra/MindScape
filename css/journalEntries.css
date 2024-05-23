@@ -233,24 +233,6 @@ button.delete-btn:hover {
       box-sizing: border-box; /* Ensure padding doesn't affect width */
   }
 
-  #nav-menu {
-      width: 200px;
-      left: -200px;
-  }
-
-  .nav-open {
-      left: 0;
-  }
-
-  .main-push {
-      margin-left: 200px;
-  }
-
-  #nav-menu a {
-      font-size: 18px;
-      padding: 8px 10px;
-  }
-
   #entriesContainer {
       margin: 10px 0;
       padding: 10px;
