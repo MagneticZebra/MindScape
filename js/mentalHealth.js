@@ -91,7 +91,7 @@ document.querySelectorAll('.emoji').forEach(emoji => {
             if (this.textContent === '😊') {
                 responseElement.textContent = "That's awesome! What's making you feel so great?";
             } else if (this.textContent === '😐') {
-                responseElement.textContent = "Cool cool! Is there anything you can do to boost your mood?";
+                responseElement.textContent = "Cool cool! Is there anything you can do to boost your mood? What made you feel this way?";
             } else {
                 responseElement.textContent = "That's okay! It's all part of the journey. Think about what made you feel this way and what lesson(s) you learned from it?";
             }

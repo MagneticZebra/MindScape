@@ -173,7 +173,6 @@ h2 {
   position: relative;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow */
   transition: box-shadow 0.2s;
-  flex-wrap: wrap;
   display: flex; /* Use flexbox to align items */
   justify-content: space-between; /* Space items apart */
   align-items: center; /* Center items vertically */
@@ -184,7 +183,6 @@ h2 {
 }
 
 .tableau-list li button {
-  margin-left: 5px;
   padding: 5px 10px;
   background-color: #4CAF50; /* Green background */
   color: white; /* White text */
@@ -195,23 +193,7 @@ h2 {
 
 .tableau-list li button.delete-btn {
   background-color: #f44336; /* Red background for delete button */
-}
-
-.delete-btn {
-  color: #777;
-  font-size: 1rem; /* larger font size for readability */
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  border: none;
-  background: transparent;
-  transition: color 0.2s;
-}
-
-.delete-btn:hover {
-  color: #000000; /* change color on hover for emphasis */
+  margin-left: 10px;
 }
 
 /* Style the text inside the list for better readability */
@@ -289,13 +271,39 @@ h2 {
 
 button {
   padding: 10px 20px;
-  margin-right: 10px; /* Space between buttons */
+  margin-right: 5px; /* Space between buttons */
   background-color: #4CAF50; /* Harmonious with your color scheme */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+.edit-btn {
+  font-size: 1rem; /* larger font size for readability */
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: color 0.2s;
+  order: 1;
+}
+
+.edit-btn:hover {
+  color: #000000; /* change color on hover for emphasis */
+}
+
+.delete-btn {
+  font-size: 1rem; /* larger font size for readability */
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: color 0.2s;
+  order: 2;
+}
+
+.delete-btn:hover {
+  color: #000000; /* change color on hover for emphasis */
 }
 
 button:hover {
@@ -463,5 +471,5 @@ button#close-journal-panel:hover {
     width: calc(100% - 20px); /* Full width of the screen with padding adjustment */
     box-sizing: border-box; /* Ensures padding is included in the width */
     height: 500px; /* Adjust height as needed */
-}
+  }
 }
