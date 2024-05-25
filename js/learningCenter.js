@@ -1,31 +1,41 @@
-const quote = "\"The root of every problem is a lack of knowledge\" - Robert Pianezza";
-const quoteElement = document.getElementById('introQuote');
-const contentElement = document.getElementById('content');
-
-let index = 0;
-
 document.addEventListener('DOMContentLoaded', function() {
+    // Array of quotes
+    const quotes = [
+        "\"The root of every problem is a lack of knowledge.\" - Robert Pianezza",
+        "\"The only source of knowledge is experience.\" - Albert Einstein",
+        "\"Happiness is when what you think, what you say, and what you do are in harmony.\" - Mahatma Gandhi",
+        "\"You gain strength, courage, and confidence by every experience in which you really stop to look fear in the face.\" - Eleanor Roosevelt",
+        "\"It always seems impossible until it's done.\" - Nelson Mandela"
+    ];
+    const quoteElement = document.getElementById('introQuote');
+    const contentElement = document.getElementById('content');
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const selectedQuote = quotes[randomIndex];
+
+    let index = 0;
+
+    // Type out the quote letter by letter
+    function typeQuote() {
+        if (index < selectedQuote.length) {
+            quoteElement.textContent += selectedQuote[index];
+            index++;
+            setTimeout(typeQuote, 60);
+        } else {
+            // After typing the entire quote, delay, then fade out the quote
+            setTimeout(() => {
+                quoteElement.style.opacity = '0';
+
+                // After the quote has faded out, fade in the main content
+                setTimeout(() => {
+                    contentElement.style.opacity = '1';
+                }, 1000); // Delay corresponds to the opacity transition of the quote
+            }, 1000); // Adjust this delay to keep the quote visible longer (3000ms = 3s)
+        }
+    }
+
+    // Start typing effect
     typeQuote();
 });
-
-// Type out the quote letter by letter
-function typeQuote() {
-    if (index < quote.length) {
-        quoteElement.textContent += quote[index];
-        index++;
-        setTimeout(typeQuote, 60);
-    } else {
-        // After typing the entire quote, delay, then fade out the quote
-        setTimeout(() => {
-            quoteElement.style.opacity = '0';
-
-            // After the quote has faded out, fade in the main content
-            setTimeout(() => {
-                contentElement.style.opacity = '1';
-            }, 1000); // Delay corresponds to the opacity transition of the quote
-        }, 1000); // Adjust this delay to keep the quote visible longer (3000ms = 3s)
-    }
-}
 
 function toggleMenu() {
     var menu = document.getElementById('nav-menu');
