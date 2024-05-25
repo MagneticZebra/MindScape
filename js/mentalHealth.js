@@ -46,23 +46,30 @@ function addItemToTableau(text, tableau, tableauId) {
 function handleEnterKeyEvent(event) {
     if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault(); // Prevent default to avoid new line in textarea
-        var text = inputBox.value.trim();
+        submitResponse();
+    }
+}
 
-        if (text !== "") {
-            // Use the currentEmoji to determine where to add the item
-            if (currentEmoji.textContent === '😊') {
-                addItemToTableau(text, winsTableau, 'wins');
-            } else {
-                addItemToTableau(text, lessonsTableau, 'lessons');
-            }
-            inputBox.value = ''; // Clear the input box after submitting
-            responseContainer.style.display = 'none'; // Hide only the container with the input and submit button
+// Function to submit the response
+function submitResponse() {
+    var text = inputBox.value.trim();
+
+    if (text !== "") {
+        // Use the currentEmoji to determine where to add the item
+        if (currentEmoji.textContent === '😊') {
+            addItemToTableau(text, winsTableau, 'wins');
+        } else {
+            addItemToTableau(text, lessonsTableau, 'lessons');
         }
+        inputBox.value = ''; // Clear the input box after submitting
+        responseContainer.style.display = 'none'; // Hide only the container with the input and submit button
+        emojiResponse.style.display = 'none'; // Hide the response message
     }
 }
 
 // Attach the Enter key event listener to the input box
 document.getElementById('response-input').addEventListener('keydown', handleEnterKeyEvent);
+
 
 document.querySelectorAll('.emoji').forEach(emoji => {
     emoji.addEventListener('click', function() {
