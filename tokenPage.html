@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Token</title>
+    <link rel="stylesheet" href="css/tokenPage.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Your Access Token</h1>
+        <input type="text" id="token-input" placeholder="Enter your access token">
+        <button id="submit-token">Submit</button>
+
+        <h2>Don't have a token or having trouble?</h2>
+        <p>Contact me at <a href="mailto:your-email@example.com" target="_blank">robert.pianezza@gmail.com</a> or DM <a href="https://www.instagram.com/robertpianezza/" target="_blank">@robertpianezza</a> on Instagram to get your access token.</p>
+        <div id="secure-content"></div>
+    </div>
+
+    <script>
+        // Define the shared token
+        const sharedToken = 'negkkbalaolwnn3lyh';
+
+        // Check if the user is already authenticated
+        const storedToken = localStorage.getItem('accessToken');
+        if (storedToken === sharedToken) {
+            window.location.href = 'mainPage.html';
+        }
+
+        document.getElementById('submit-token').addEventListener('click', function() {
+            const token = document.getElementById('token-input').value;
+            if (token === sharedToken) {
+                // Store the token in localStorage to simulate authentication
+                localStorage.setItem('accessToken', token);
+                window.location.href = 'mainPage.html';
+            } else {
+                alert('Invalid token.');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
