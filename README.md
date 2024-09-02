@@ -19,7 +19,8 @@ To use **MindScape**:
 
 1. Download the repository.
 2. Open `index.html` in your web browser.
-3. Start exploring the mental wellness tools provided.
+3. Access token: negkkbalaolwnn3lyh
+4. Start exploring the mental wellness tools provided.
 
 ## Features
 
