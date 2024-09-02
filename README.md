@@ -17,7 +17,7 @@ See it in action (https://mindscapeapplication.netlify.app/)
 
 To use **MindScape**:
 
-1. Download the repository containing `index.html`, `style.css`, and `script.js`.
+1. Download the repository.
 2. Open `index.html` in your web browser.
 3. Start exploring the mental wellness tools provided.
 
@@ -25,8 +25,7 @@ To use **MindScape**:
 
 - Comprehensive tools for addressing mental health struggles, self-limiting beliefs, and meditation.
 - User-friendly interface with responsive design.
-- Rich content aimed at promoting mental wellness and self-improvement.
-
+- 
 ## Credits
 
 Software developed by Robert Pianezza (mailto:robert.pianezza@gmail.com).
@@ -45,4 +44,4 @@ If you are interested in contributing to **MindScape**, here are a few ways you 
 
 Please adhere to the contribution guidelines when submitting pull requests or reporting issues.
 
-For further information or inquiries, please contact Robert Pianezza at [mailto:robert.pianezza@gmail.com](mailto:robert.pianezza@gmail.com).
+For further information or inquiries, please contact Robert Pianezza at (mailto:robert.pianezza@gmail.com).
