@@ -25,7 +25,7 @@ To use **MindScape**:
 
 - Comprehensive tools for addressing mental health struggles, self-limiting beliefs, and meditation.
 - User-friendly interface with responsive design.
-- 
+  
 ## Credits
 
 Software developed by Robert Pianezza (mailto:robert.pianezza@gmail.com).
