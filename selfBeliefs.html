@@ -34,20 +34,11 @@
             <h1>Self Limiting Beliefs</h1>
         </header>
     
-        <main>
-            <!-- Introductory Video -->
-            <section id="intro-video">
-                <h2>Welcome to the Self-Limiting Beliefs Workshop</h2>
-                <video controls>
-                    <source src="videos/intro.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <p>Learn what self-limiting beliefs are and how they are holding you back.</p>
-            </section>
+        <main>         
 
             <section id="startForm">
                 <h2>Self-limiting Beliefs Quiz</h2>
-                <p>This quiz takes approximately 20-30 minutes.<br>Please only do this when you have time. DO NOT RUSH!</p>
+                <p>This quiz takes approximately 20-30 minutes.<br>Please only do this when you have time.</p>
                 <button id="startButton" onclick="startForm()">Start Quiz</button>
             </section>
             
@@ -75,11 +66,11 @@
                             <textarea name="question1" id="question1"></textarea>
                         </div>
                         <div class="input-group">
-                            <label for="question2">2. Which of those things did you tell yourself you would start, and then never follow through with doing? List all that apply.</label>
+                            <label for="question2">2. Which of those things did you tell yourself you would start, and then never follow through with doing? List all that come to mind.</label>
                             <textarea name="question2" id="question2"></textarea>
                         </div>
                         <div class="input-group">
-                            <label for="question3">3. Now, why was that the case? Justify why you didn’t do them, even though you knew you wanted to? Try to do this using “I am/I was” sentences. An example would be “I am too busy”. 2-3 sentences for each should suffice.</label>
+                            <label for="question3">3. Why was that the case? Justify why you didn’t do them, even though you knew you wanted to? Try to do this using “I am/I was” sentences. An example would be “I am too busy”. 2-3 sentences for each should suffice.</label>
                             <textarea name="question3" id="question3"></textarea>
                         </div>
                         <div class="input-group">
@@ -96,7 +87,7 @@
                     </div>
                     <div class="form-step">
                         <div class="input-group">
-                            <label for="question6">6. For each of the things that you told yourself you would start, and then never did (Question 2), are there other people currently doing those things? It doesn’t necessarily have to be someone you know, just someone. Find someone online who is doing each thing you never started.</label>
+                            <label for="question6">6. For each of the things that you told yourself you would start, and then never did (Question 2), are there other people currently doing those things? It doesn’t have to be someone you know, just someone. Find someone online who is doing each thing you never started.</label>
                             <textarea name="question6" id="question6"></textarea>
                         </div>
                         <div class="input-group">
@@ -108,7 +99,7 @@
                             <textarea name="question8" id="question8"></textarea>
                         </div>
                         <div class="input-group">
-                            <label for="question9">9. Are the limiting beliefs from Question 5 congruent with your current goals and aspirations? If not, why? What makes those patterns of belief something that holds you back?</label>
+                            <label for="question9">9. Are the limiting beliefs from Question 5 aligned with your current goals and aspirations? If not, why? What makes those patterns of belief something that holds you back?</label>
                             <textarea name="question9" id="question9"></textarea>
                         </div>
                         <div class="input-group">
@@ -121,17 +112,17 @@
                         </div>
                     </div>
                     <div class="form-step">
-                        <p>Within this section, it is vital to remember that these limiting beliefs you hold about yourself are not truth. Truth is relative.Truth is what you believe truth to be. 
+                        <p>It is vital to remember that these limiting beliefs you hold about yourself are not truth. Truth is relative. Truth is what you believe truth to be. 
 
                             You’ve now identified what limiting beliefs you hold, questioned how valid they are, and envisioned your life if they didn't have power over you. Now, it is time to choose your truth.
                             </p>
                         <div class="input-group">
                             <label for="question11">11. Refer back to Question 5. Copy and paste those answers.</label>
-                            <textarea name="question11" id="question11"></textarea>
+                            <textarea name="question11" id="question11" required></textarea>
                         </div>
                         <div class="input-group">
                             <label for="question12">12. Change them to their inverse. If you wrote “I don’t believe I’m smart enough to start my own business” change it to “I believe I am smart enough…?</label>
-                            <textarea name="question12" id="question12"></textarea>
+                            <textarea name="question12" id="question12" required></textarea>
                         </div>
                       <div class="btns-group">
                         <button class="btn btn-prev">Previous</button>
@@ -139,7 +130,7 @@
                       </div>
                     </div>
                     <div class="form-step">
-                        <h3 id="formCompleted">Form Completed! Great Work!</h3>
+                        <h3 id="formCompleted">Quiz Completed! Great Work!</h3>
                     </div>
                   </form>
             </section>
